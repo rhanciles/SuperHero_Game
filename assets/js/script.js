@@ -4,7 +4,27 @@ $(document).ready(function () {
 	var playerDeck = [];
 	var computerDeck = [];
 	var playerTopCard = 0;
+	var playerPrefStat = 0;
+	var computerPrefStat = 0;
 	var computerTopCard = 0;
+	pref = ["combat", "durability", "intelligence", "power", "speed", "strength"]
+	var plainCard = [{
+		"name": "Secret",
+		"powerstats":{
+			"combat": "",
+			"durability": "",
+			"intelligence": "",
+			"power": "",
+			"speed": "",
+			"strength": ""
+		},
+		"images": {
+			"xs": "",
+			"sm": "",
+			"md": "",
+			"lg": ""
+		}
+	}]
 
 
 	// this is only whilst testing!!
@@ -24,9 +44,39 @@ $(document).ready(function () {
 
 	stackDecks();
 	displayCard(playerDeck, playerTopCard, "#playerCards");
-	displayCard(computerDeck, computerTopCard, "#computerCards");
+	displayCard(plainCard, 0, "#computerCards");
 	displayCardStats(playerDeck, playerTopCard, "#playerCardStats");
-	displayCardStats(computerDeck, computerTopCard, "#computerCardStats");
+	displayCardStats(plainCard, 0, "#computerCardStats");
+
+	// event listener to trigger the computer to play
+	$(document).on("click", ".play", function(event) {
+		event.preventDefault();
+		playerPrefStat = $(this).attr("id");
+		console.log(playerPrefStat);
+
+		displayCard(computerDeck, computerTopCard, "#computerCards");
+		displayCardStats(computerDeck, computerTopCard, "#computerCardStats");
+		console.log(pref);
+//console.log(playerDeck[playerTopCard].powerstats.pref[0]);
+
+
+		var preference = pref[playerPrefStat].toString();
+		var playerPrefs = playerDeck[playerTopCard].powerstats.$(preference);// .powerstats.preference;
+		var compPrefs = computerDeck[computerTopCard].powerstats.$(preference);
+
+console.log(preference);
+console.log(playerPrefs);//.preference.toString());
+console.log(compPrefs);//.preference.toString());
+		if (playerPrefs > compPrefs) {
+			console.log("player wins");
+		}
+		else if (playerPrefs < compPrefs) {
+			console.log("computer wins");
+		}
+		else {
+			console.log("its a draw");
+		}
+	});
 
 	function getsuperHeroes() {
 		const settings = {
@@ -107,14 +157,27 @@ $(document).ready(function () {
 	function displayCardStats(player, index, cardId) {
 		var card = $("<div>").addClass("card");
 		var name = $("<h4>").text(player[index].name);
-		var power = $("<p>").text("Power: " + player[index].powerstats.power);
-		var strength = $("<p>").text("Strength: " + player[index].powerstats.strength);
-		var intelligence = $("<p>").text("Intelligence: " + player[index].powerstats.intelligence);
-		var speed = $("<p>").text("Speed: " + player[index].powerstats.speed);
-		var combat = $("<p>").text("Combat: " + player[index].powerstats.combat);
-		var durability = $("<p>").text("Durability: " + player[index].powerstats.durability);
+
+		var power = $("<button>").attr({class: "btn btn-outline play", id: "3"});
+		power.append($("<p>").text("Power: " + player[index].powerstats.power));
+		
+		var strength = $("<button>").attr({class: "btn btn-outline play", id: "5"});
+		strength.append($("<p>").text("Strength: " + player[index].powerstats.strength));
+
+		var intelligence = $("<button>").attr({class: "btn btn-outline play", id: "2"});
+		intelligence.append($("<p>").text("Intelligence: " + player[index].powerstats.intelligence));
+
+		var speed = $("<button>").attr({class: "btn btn-outline play", id: "4"});
+		speed.append($("<p>").text("Speed: " + player[index].powerstats.speed));
+
+		var combat = $("<button>").attr({class: "btn btn-outline play", id: "0"});
+		combat.append($("<p>").text("Combat: " + player[index].powerstats.combat));
+
+		var durability = $("<button>").attr({class: "btn btn-outline play", id: "1"});
+		durability.append($("<p>").text("Durability: " + player[index].powerstats.durability));
 	  
-		card.append(name, power, strength, intelligence, speed, combat, durability);
+		
+		card.append(name, combat, durability, intelligence, power, speed, strength);
 		$(cardId).html(card);
 
 	};
