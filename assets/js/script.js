@@ -35,7 +35,7 @@ $(document).ready(function () {
 	 THEN RE-COMMENT them both, so we don't use up the data fetch limits and can carry on 
 	 working with the data locally
 	****************************************************************************************/
-	if (!fetchStoredData()) {
+	if (fetchStoredData()) {
 		//getsuperHeroes();
 		//getvillains();
 	};
