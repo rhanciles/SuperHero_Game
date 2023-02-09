@@ -1,4 +1,28 @@
+:root {
+  --font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --bg-color: #fcfcfc;
+  --primary-color: rgb(0, 88, 176);
+  --secondary-color: #ff7235;
+  --primary-shadow: #0be5ecee;
+  --secondary-shadow: #00f37e;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;
+}
 
+nav a:hover {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+
+.row{
+  background-image: url(/assets/images/background-image.jpeg);
+}
 .card {
     height: 300px;
     width: 200px;
@@ -9,7 +33,7 @@
     justify-content: center;
     border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px #888888;
+    box-shadow: 10px 10px 5px lightblue;
     margin: 10px;
   }
 
