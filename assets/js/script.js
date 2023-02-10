@@ -242,7 +242,7 @@ $(document).ready(function () {
 			console.log("its a draw"); // not taking anything away so just round robin the player & comp arrays
 			playerDeck.push(playerDeck.shift()); // shift the player array in a round robin stylee
 			computerDeck.push(computerDeck.shift()); // shift the comp array in a round robin stylee
-			renderNewCards("player");
+
 		}
 
 
@@ -267,21 +267,26 @@ $(document).ready(function () {
 console.log("game over: ", gameOver);
 
 		// startOver should be an option via a modal or button in case the player wants to play again
+		/*
 		if (gameOver && startOver) {
 			// put up a modal showing the results and giving the opportunity to the player to store high scores locally
 			// and if they want to start over!
 			init();
 			return;
-		}
-		else if (!gameOver) {
+		};
+		*/
+		//  commented this out for now - we don't need this if not using comp!!!!!!
+		if (!gameOver) {
+			renderNewCards(winner);
+			/* commented out for comp player...
 			// before rendering new cards, we need to wait to see the comp card else its just too damn quick!
 			setTimeout(() => {
 				// enough time for the player to see the comp's powerstats...
-				renderNewCards(winner);
-			}, 2000);
 
+			}, 2000);
+			*/
 			console.log("player deck: "+playerDeck.length, "comp deck: "+computerDeck.length);
-			if (winner === "computer") {	  
+			/*	if (winner === "computer") {	  
 				//alert("comp wins - about to trigger click");
 				setTimeout(() => {
 					// enough time for the player to see the comp's powerstats...
@@ -290,7 +295,9 @@ console.log("game over: ", gameOver);
 
 				return;
 			};
+			*/
 		};
+		
 	};
 
 	function getsuperHeroes() {
