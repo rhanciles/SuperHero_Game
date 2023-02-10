@@ -36,8 +36,8 @@ $(document).ready(function () {
 	 working with the data locally
 	****************************************************************************************/
 	if (fetchStoredData()) {
-		//getsuperHeroes();
-		//getvillains();
+		getsuperHeroes();
+		getvillains();
 	};
 
 
