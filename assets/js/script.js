@@ -206,11 +206,13 @@ $(document).ready(function () {
 			else {
 				$("#result").html("<h4>Player Wins</h4>");
 				gameOver = true;
+				
 				setTimeout(() => {
 					// enough time for the player to see the comp's powerstats...
-					renderNewCards(winner);
+					//renderNewCards(winner);
 				}, 2000);
-				return;
+				//return;
+				
 			}
 		}
 		else if (playerPrefs < compPrefs) {
@@ -229,11 +231,13 @@ $(document).ready(function () {
 			else {
 				$("#result").html("<h4>Computer Wins</h4>");
 				gameOver = true;
+				/*
 				setTimeout(() => {
 					// enough time for the player to see the comp's powerstats...
 					renderNewCards(winner);
 				}, 2000);
 				return;
+				*/
 			}
 		}
 		else {
@@ -242,7 +246,7 @@ $(document).ready(function () {
 			console.log("its a draw"); // not taking anything away so just round robin the player & comp arrays
 			playerDeck.push(playerDeck.shift()); // shift the player array in a round robin stylee
 			computerDeck.push(computerDeck.shift()); // shift the comp array in a round robin stylee
-
+			winner = "player";
 		}
 
 
@@ -253,6 +257,8 @@ $(document).ready(function () {
 			$("#gameStats").append(gameStats, finished);
 			$(".computerPlay").prop("disabled", true);
 			$(".playerPlay").prop("disabled", true);
+			$("#computerStatus").empty();
+			$("#playerStatus").empty();
 			setTimeout(() => {
 				// enough time for the player to see the comp's powerstats, etc...
 
@@ -277,7 +283,11 @@ console.log("game over: ", gameOver);
 		*/
 		//  commented this out for now - we don't need this if not using comp!!!!!!
 		if (!gameOver) {
-			renderNewCards(winner);
+			setTimeout(() => {
+				// enough time for the player to see the comp's powerstats...
+				renderNewCards(winner);
+			}, 2000);
+
 			/* commented out for comp player...
 			// before rendering new cards, we need to wait to see the comp card else its just too damn quick!
 			setTimeout(() => {
