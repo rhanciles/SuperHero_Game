@@ -56,9 +56,9 @@ $(document).ready(function () {
 		};
 		computerTopCard = 0;
 		playerTopCard = 0;
-		var playerwins = 0;
-		var ComputerWins = 0;
-		var gameDraws = 0;
+		playerWins = 0;
+		computerWins = 0;
+		gameDraws = 0;
 		renderNewCards("player");
 		gameOver = false;
 		startOver = false;
@@ -251,9 +251,12 @@ $(document).ready(function () {
 		var finished = $("<h4>").text("We are Done! ");
 		if (computerDeckCount === 0 || playerDeckCount === 0) {
 			$("#gameStats").append(gameStats, finished);
+			$(".computerPlay").prop("disabled", true);
+			$(".playerPlay").prop("disabled", true);
 			setTimeout(() => {
-				// enough time for the player to see the comp's powerstats...
-				renderNewCards(winner);
+				// enough time for the player to see the comp's powerstats, etc...
+
+				//renderNewCards("player");
 			}, 2000);
 			return;
 		}
@@ -338,6 +341,12 @@ console.log("game over: ", gameOver);
 		});
 	};
 
+	// listener for starting over
+	$("#startOver").on("click", function(event) {
+		$("#gameStats").empty();
+		init();
+	});
+
 	function fetchStoredData() {
 		var storedVillians = localStorage.getItem("villains");
 		var storedSuperheroes = localStorage.getItem("superHeroes");
@@ -361,6 +370,7 @@ console.log("game over: ", gameOver);
 	};
 
 	function stackDecks() {
+		// this is what we need to use in the end!!!! i.e change the for loop!
 		//for (var i=0; i<superHeroes.length/2; i++) {
 			playerDeckCount = 0;
 			computerDeckCount = 0;
