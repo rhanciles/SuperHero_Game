@@ -21,7 +21,7 @@ nav a:hover {
 
 
 .row{
-  background-image: url(/assets/images/background-image.jpeg);
+  background-image: url(../images/background-image.jpeg);
 }
 .card {
     height: 300px;
