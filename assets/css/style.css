@@ -48,3 +48,16 @@
     font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
     letter-spacing: 2px;
   }
+
+
+  /* toggler start */
+
+  #navbarNav {
+    display: none;
+  }
+  
+  #navbarNav.show {
+    display: block;
+  }
+  
+    /* toggler end */

@@ -192,4 +192,12 @@ console.log(compPrefs);//.preference.toString());
 	};
 });
 
+// toggle the navigation start
+
+$(document).ready(function() {
+	$(".navbar-toggler").click(function() {
+	  $("#navbarNav").toggle();
+	});
+  });
   
+  // toggle naivgation end
