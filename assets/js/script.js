@@ -8,13 +8,14 @@ $(document).ready(function () {
 	var playerPrefStat = 0;
 	var computerPrefStat = 0;
 	var computerTopCard = 0;
-	var startOver = false;
+	var startOver = true;
 	var gameOver = false;
 	var playerWins = 0;
 	var computerWins = 0;
 	var gameDraws = 0;
 	var playerDeckCount = 0;
 	var computerDeckCount = 0;
+	var winner = "";
 	pref = ["combat", "durability", "intelligence", "power", "speed", "strength"]
 	var plainCard = [{
 		"name": "Secret",
@@ -45,6 +46,7 @@ $(document).ready(function () {
 	****************************************************************************************/
 	init();
 	function init() {
+		
 		if (!fetchStoredData()) {
 			//getsuperHeroes();
 			//getvillains();
@@ -60,28 +62,79 @@ $(document).ready(function () {
 		renderNewCards("player");
 		gameOver = false;
 		startOver = false;
-
-		console.log("comp deck: "+computerDeck, "player deck: "+playerDeck);
+		
+		//fetchCoolBackground();
+		//console.log("comp deck: "+computerDeck, "player deck: "+playerDeck);
 	};
 
+	function fetchCoolBackground() {
+		//var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=XDcKP9yHzjMMGS3G6VfDutHpZSq3DAY5";
+		var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=XDcKP9yHzjMMGS3G6VfDutHpZSq3DAY5&q=blackholes@xponentialdesign";
+
+		$.ajax({
+		  url: queryURL,
+		  method: "GET"
+		}).then(function(response) {
+		  console.log(response);
+		  $("body").append("<img src='"+response.data[3].images.original.url+"'>");
+		  
+		//   for (var i=0; i<response.data.length; i++) {
+
+		// 	$("body").append("<img src='"+response.data[i].images.original.url+"'>");
+		//   }
+		  //$("body").append("<img src='https://media.giphy.com/media/Tj4jjaCxXRVSARsUzN/giphy.gif?cid=ecf05e47v74p9cft7m8gufk11q5k1yr8vgpin4xmh91d2s66&rid=giphy.gif&ct=g'");
+		});
+
+	}
 	function renderNewCards(winner) {
 		displayCard(playerDeck, "#playerCards");
 		displayCardStats(playerDeck, "#playerCardStats");
 		if (winner === "player") {
 			displayCard(plainCard, "#computerCards");
 			displayCardStats(plainCard, "#computerCardStats");
+			$(".computerPlay").prop("disabled", true);
+			$(".playerPlay").prop("disabled", false);
+			$("#computerStatus").empty();
+			$("#playerStatus").html("<h4>Choose your Power!</h4>");
 		}
 		else {
 			displayCard(computerDeck, "#computerCards");
 			displayCardStats(computerDeck, "#computerCardStats");
+			$(".playerPlay").prop("disabled", true);
+			$(".computerPlay").prop("disabled", false);
+			$("#playerStatus").empty();
+			$("#computerStatus").html("<h4>Choose your Power!</h4>");
 		}
 	};
 
 	// event listener to trigger the player to play
 	$(document).on("click", ".computerPlay", function(event) {
 		event.preventDefault();
+		//================== remove these two lines once we get computer play working correctly====================
+		computerPrefStat = $(this).attr("id");
+		computerPrefStat = computerPrefStat.substring(1);
+		//====================================================================
+
+
+/* this code is towards making the computer play - though tghe logic isn't correct!!!!!
 		computerPrefStat = getComputerPrefStat();
-		gameOn(getComputerPrefStat());
+
+		console.log("before: ", $("#0c"));
+		if (computerPrefStat === $("#0c")) {
+				$("#0c").addClass("active");
+		}
+		console.log("after: ", $("#0c"));
+		setTimeout(() => {
+			// enough time for the player to see the comp's powerstats...
+			console.log("game on from comp");
+			gameOn(computerPrefStat, event);
+			console.log("returning from comp game on");
+		}, 60000);
+		*/
+		console.log("game on from comp");
+		gameOn(computerPrefStat, event);
+		console.log("returning from comp game on");
+
 	});
 	function getComputerPrefStat() {
 		var compPowerstats= computerDeck[0].powerstats;
@@ -125,14 +178,16 @@ $(document).ready(function () {
 		console.log("player pref stat: "+playerPrefStat);
 		displayCard(computerDeck, "#computerCards");
 		displayCardStats(computerDeck, "#computerCardStats");
+		console.log("about to game on player side");
 		gameOn(playerPrefStat, event);
+		console.log("returning from player game on");
 	});
 
 	function gameOn(prefs, event) {
 
 		var playerPrefs = playerDeck[playerTopCard].powerstats[pref[prefs]];
 		var compPrefs = computerDeck[computerTopCard].powerstats[pref[prefs]];
-		var winner = "";
+		winner = "";
 		console.log("comp prefs: "+compPrefs, "player prefs: "+playerPrefs);
 		if (playerPrefs > compPrefs) {
 			console.log("player wins");
@@ -151,6 +206,11 @@ $(document).ready(function () {
 			else {
 				$("#result").html("<h4>Player Wins</h4>");
 				gameOver = true;
+				setTimeout(() => {
+					// enough time for the player to see the comp's powerstats...
+					renderNewCards(winner);
+				}, 2000);
+				return;
 			}
 		}
 		else if (playerPrefs < compPrefs) {
@@ -169,13 +229,20 @@ $(document).ready(function () {
 			else {
 				$("#result").html("<h4>Computer Wins</h4>");
 				gameOver = true;
+				setTimeout(() => {
+					// enough time for the player to see the comp's powerstats...
+					renderNewCards(winner);
+				}, 2000);
+				return;
 			}
 		}
 		else {
+
 			gameDraws++;
 			console.log("its a draw"); // not taking anything away so just round robin the player & comp arrays
 			playerDeck.push(playerDeck.shift()); // shift the player array in a round robin stylee
 			computerDeck.push(computerDeck.shift()); // shift the comp array in a round robin stylee
+			renderNewCards("player");
 		}
 
 
@@ -184,34 +251,43 @@ $(document).ready(function () {
 		var finished = $("<h4>").text("We are Done! ");
 		if (computerDeckCount === 0 || playerDeckCount === 0) {
 			$("#gameStats").append(gameStats, finished);
+			setTimeout(() => {
+				// enough time for the player to see the comp's powerstats...
+				renderNewCards(winner);
+			}, 2000);
+			return;
 		}
 		else {
 			$("#gameStats").append(gameStats);
 		}
 
+console.log("game over: ", gameOver);
 
 		// startOver should be an option via a modal or button in case the player wants to play again
 		if (gameOver && startOver) {
 			// put up a modal showing the results and giving the opportunity to the player to store high scores locally
 			// and if they want to start over!
 			init();
+			return;
 		}
-		else {
-			console.log("player deck: "+playerDeck.length, "comp deck: "+computerDeck.length);
-			if (winner = "computer") {
-				var temp = getComputerPrefStat()
-				console.log("getcompstats returned: ", temp, event);
-
-				jQuery(".computerPlayer").trigger('click');
-
-			}
+		else if (!gameOver) {
 			// before rendering new cards, we need to wait to see the comp card else its just too damn quick!
 			setTimeout(() => {
 				// enough time for the player to see the comp's powerstats...
 				renderNewCards(winner);
 			}, 2000);
 
-		}
+			console.log("player deck: "+playerDeck.length, "comp deck: "+computerDeck.length);
+			if (winner === "computer") {	  
+				//alert("comp wins - about to trigger click");
+				setTimeout(() => {
+					// enough time for the player to see the comp's powerstats...
+					//$(".computerPlay").trigger("click");
+				}, 1000);
+
+				return;
+			};
+		};
 	};
 
 	function getsuperHeroes() {
@@ -288,7 +364,7 @@ $(document).ready(function () {
 		//for (var i=0; i<superHeroes.length/2; i++) {
 			playerDeckCount = 0;
 			computerDeckCount = 0;
-			for (var i=0; i<=1; i++) {
+			for (var i=0; i<=1; i++) { // remember to take this out after testing and reinsert the real one
 			playerDeck.push(superHeroes[getRandomNum(superHeroes.length)]);
 			computerDeck.push(superHeroes[getRandomNum(superHeroes.length)]);
 			playerDeck.push(villains[getRandomNum(villains.length)]);
@@ -309,22 +385,22 @@ $(document).ready(function () {
 				var card = $("<div>").addClass("card");
 				var name = $("<h4>").text(player[0].name);
 		
-				var power = $("<button>").attr({class: "btn btn-outline computerPlay", id: "3"});
+				var power = $("<button>").attr({class: "btn btn-outline computerPlay", id: "33"});
 				power.append($("<p>").text("Power: " + player[0].powerstats.power));
 				
-				var strength = $("<button>").attr({class: "btn btn-outline computerPlay", id: "5"});
+				var strength = $("<button>").attr({class: "btn btn-outline computerPlay", id: "55"});
 				strength.append($("<p>").text("Strength: " + player[0].powerstats.strength));
 		
-				var intelligence = $("<button>").attr({class: "btn btn-outline computerPlay", id: "2"});
+				var intelligence = $("<button>").attr({class: "btn btn-outline computerPlay", id: "22"});
 				intelligence.append($("<p>").text("Intelligence: " + player[0].powerstats.intelligence));
 		
-				var speed = $("<button>").attr({class: "btn btn-outline computerPlay", id: "4"});
+				var speed = $("<button>").attr({class: "btn btn-outline computerPlay", id: "44"});
 				speed.append($("<p>").text("Speed: " + player[0].powerstats.speed));
 		
-				var combat = $("<button>").attr({class: "btn btn-outline computerPlay", id: "0"});
+				var combat = $("<button>").attr({class: "btn btn-outline computerPlay", id: "00"});
 				combat.append($("<p>").text("Combat: " + player[0].powerstats.combat));
 		
-				var durability = $("<button>").attr({class: "btn btn-outline computerPlay", id: "1"});
+				var durability = $("<button>").attr({class: "btn btn-outline computerPlay", id: "11"});
 				durability.append($("<p>").text("Durability: " + player[0].powerstats.durability));
 			
 				
