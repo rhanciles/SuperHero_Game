@@ -47,20 +47,21 @@ function superheroIndex() {
 
         var fullname = $("<li>").text(
           "Full name:" + " " + response.results[i].biography["full-name"]
-        );
+        ).addClass("listitems")
         var placeofBirth = $("<li>").text(
           "Place of Birth:" +
             " " +
             response.results[i].biography["place-of-birth"]
-        );
+        ).addClass("listitems")
         var firstAppearance = $("<li>").text(
           "First appearance:" +
             " " +
             response.results[i].biography["first-appearance"]
-        );
+        ).addClass("listitems")
         var publisher = $("<li>").text(
           "Publisher:" + " " + response.results[i].biography.publisher
-        );
+        ).addClass("listitems")
+
         biographyContainer.append(dataDiv);
         dataDiv.append(
           biography,
@@ -77,23 +78,37 @@ function superheroIndex() {
 
         var gender = $("<li>").text(
           "Gender:" + " " + response.results[i].appearance.gender
-        );
+        ).addClass("listitems")
         var hairColor = $("<li>").text(
           "Hair color:" + " " + response.results[i].appearance["hair-color"]
-        );
+        ).addClass("listitems")
         var race = $("<li>").text(
           "Race:" + " " + response.results[i].appearance.race
-        );
+        ).addClass("listitems")
         var height = $("<li>").text(
           "Height:" + " " + Object.values(response.results[i].appearance.height)
-        );
+        ).addClass("listitems")
         var weight = $("<li>").text(
           "Weight:" + " " + Object.values(response.results[i].appearance.weight)
-        );
+        ).addClass("listitems")
+
         dataDiv.append(appearance, gender, hairColor, race, height, weight);
 
-        // Create
+        // Create work info.
+
+        var work = $("<ul>")
+          .text("Work")
+          .addClass("text-center font-weight-bold underline");
+        dataDiv.append(work);
         
+        var base = $("<li>").text(
+          "Base:" + " " + response.results[i].work.base
+        ).addClass("listitems")
+        var occupation = $("<li>").text(
+          "Occupation:" + " " + response.results[i].work.occupation
+        ).addClass("listitems")
+
+        dataDiv.append(base,occupation)
 
         // Create Powerstats info.
         var powerStats = $("<ul>")

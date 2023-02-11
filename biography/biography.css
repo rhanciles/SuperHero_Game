@@ -13,15 +13,22 @@ img {
 }
 .border {
 border: solid lightgray;
-border-width: thick;
+
 }
 .div-styling {
 padding: 10px;
-margin: 10px;
+width: 100%;
+margin-top: 25px;
+margin-bottom: 25px;
 }
 .underline {
     text-decoration: underline;
 }
 .info {
     margin: 10px;
+    font-size: 3rem;
+}
+
+.listitems {
+    list-style-type: none;
 }
