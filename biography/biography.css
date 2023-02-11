@@ -1,6 +1,27 @@
+* {
+
+    font-family: 'Bangers', cursive;
+
+}
+
+
 footer {
     padding: 30px;
 }
 img {
     width: 100%;
+}
+.border {
+border: solid lightgray;
+border-width: thick;
+}
+.div-styling {
+padding: 10px;
+margin: 10px;
+}
+.underline {
+    text-decoration: underline;
+}
+.info {
+    margin: 10px;
 }
