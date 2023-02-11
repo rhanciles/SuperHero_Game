@@ -513,3 +513,26 @@ $(document).ready(function() {
   });
   
 
+  // modal for how to play 
+
+  $(document).ready(function() {
+	var htpBtn = $('#how-to-play-btn');
+	var htpModal = $('#how-to-play-modal');
+	var span = $('.close-btn');
+  
+	htpBtn.on('click', function() {
+	  htpModal.show();
+	});
+  
+	span.on('click', function() {
+	  htpModal.hide();
+	});
+  
+	$(window).on('click', function(event) {
+	  if (event.target == htpModal[0]) {
+		htpModal.hide();
+	  }
+	});
+  });
+  
+
