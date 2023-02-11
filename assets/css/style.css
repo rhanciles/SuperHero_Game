@@ -78,6 +78,7 @@ nav a:hover {
 
   #navbarNav {
     display: none;
+    width: 100%;
   }
   
   #navbarNav.show {

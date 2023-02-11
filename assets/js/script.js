@@ -462,3 +462,27 @@ $(document).ready(function() {
   
   // toggle naivgation end
 
+  
+  // modal for about us
+
+$(document).ready(function() {
+	var aboutUsBtn = $('#about-us-btn');
+	var aboutUsModal = $('#about-us-modal');
+	var span = $('.close-btn');
+  
+	aboutUsBtn.on('click', function() {
+	  aboutUsModal.show();
+	});
+  
+	span.on('click', function() {
+	  aboutUsModal.hide();
+	});
+  
+	$(window).on('click', function(event) {
+	  if (event.target == aboutUsModal[0]) {
+		aboutUsModal.hide();
+	  }
+	});
+  });
+  
+
