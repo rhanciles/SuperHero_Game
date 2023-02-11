@@ -56,9 +56,9 @@ $(document).ready(function () {
 		};
 		computerTopCard = 0;
 		playerTopCard = 0;
-		var playerwins = 0;
-		var ComputerWins = 0;
-		var gameDraws = 0;
+		playerWins = 0;
+		computerWins = 0;
+		gameDraws = 0;
 		renderNewCards("player");
 		gameOver = false;
 		startOver = false;
@@ -206,11 +206,13 @@ $(document).ready(function () {
 			else {
 				$("#result").html("<h4>Player Wins</h4>");
 				gameOver = true;
+				
 				setTimeout(() => {
 					// enough time for the player to see the comp's powerstats...
-					renderNewCards(winner);
+					//renderNewCards(winner);
 				}, 2000);
-				return;
+				//return;
+				
 			}
 		}
 		else if (playerPrefs < compPrefs) {
@@ -229,11 +231,13 @@ $(document).ready(function () {
 			else {
 				$("#result").html("<h4>Computer Wins</h4>");
 				gameOver = true;
+				/*
 				setTimeout(() => {
 					// enough time for the player to see the comp's powerstats...
 					renderNewCards(winner);
 				}, 2000);
 				return;
+				*/
 			}
 		}
 		else {
@@ -242,7 +246,7 @@ $(document).ready(function () {
 			console.log("its a draw"); // not taking anything away so just round robin the player & comp arrays
 			playerDeck.push(playerDeck.shift()); // shift the player array in a round robin stylee
 			computerDeck.push(computerDeck.shift()); // shift the comp array in a round robin stylee
-			renderNewCards("player");
+			winner = "player";
 		}
 
 
@@ -251,9 +255,14 @@ $(document).ready(function () {
 		var finished = $("<h4>").text("We are Done! ");
 		if (computerDeckCount === 0 || playerDeckCount === 0) {
 			$("#gameStats").append(gameStats, finished);
+			$(".computerPlay").prop("disabled", true);
+			$(".playerPlay").prop("disabled", true);
+			$("#computerStatus").empty();
+			$("#playerStatus").empty();
 			setTimeout(() => {
-				// enough time for the player to see the comp's powerstats...
-				renderNewCards(winner);
+				// enough time for the player to see the comp's powerstats, etc...
+
+				//renderNewCards("player");
 			}, 2000);
 			return;
 		}
@@ -264,21 +273,30 @@ $(document).ready(function () {
 console.log("game over: ", gameOver);
 
 		// startOver should be an option via a modal or button in case the player wants to play again
+		/*
 		if (gameOver && startOver) {
 			// put up a modal showing the results and giving the opportunity to the player to store high scores locally
 			// and if they want to start over!
 			init();
 			return;
-		}
-		else if (!gameOver) {
-			// before rendering new cards, we need to wait to see the comp card else its just too damn quick!
+		};
+		*/
+		//  commented this out for now - we don't need this if not using comp!!!!!!
+		if (!gameOver) {
 			setTimeout(() => {
 				// enough time for the player to see the comp's powerstats...
 				renderNewCards(winner);
 			}, 2000);
 
+			/* commented out for comp player...
+			// before rendering new cards, we need to wait to see the comp card else its just too damn quick!
+			setTimeout(() => {
+				// enough time for the player to see the comp's powerstats...
+
+			}, 2000);
+			*/
 			console.log("player deck: "+playerDeck.length, "comp deck: "+computerDeck.length);
-			if (winner === "computer") {	  
+			/*	if (winner === "computer") {	  
 				//alert("comp wins - about to trigger click");
 				setTimeout(() => {
 					// enough time for the player to see the comp's powerstats...
@@ -287,7 +305,9 @@ console.log("game over: ", gameOver);
 
 				return;
 			};
+			*/
 		};
+		
 	};
 
 	function getsuperHeroes() {
@@ -338,6 +358,12 @@ console.log("game over: ", gameOver);
 		});
 	};
 
+	// listener for starting over
+	$("#startOver").on("click", function(event) {
+		$("#gameStats").empty();
+		init();
+	});
+
 	function fetchStoredData() {
 		var storedVillians = localStorage.getItem("villains");
 		var storedSuperheroes = localStorage.getItem("superHeroes");
@@ -361,6 +387,7 @@ console.log("game over: ", gameOver);
 	};
 
 	function stackDecks() {
+		// this is what we need to use in the end!!!! i.e change the for loop!
 		//for (var i=0; i<superHeroes.length/2; i++) {
 			playerDeckCount = 0;
 			computerDeckCount = 0;
