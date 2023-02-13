@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
 	var superHeroes = [];
 	// var villains = [];
 	var playerDeck = [];
@@ -7,7 +8,7 @@ $(document).ready(function () {
 	var playerPrefStat = 0;
 	var computerPrefStat = 0;
 	var computerTopCard = 0;
-	var startOver = true;
+	// var startOver = true;
 	var gameOver = false;
 	var playerWins = 0;
 	var computerWins = 0;
@@ -59,12 +60,28 @@ $(document).ready(function () {
 	// Left original code commented-out tp preserve Ranj's original code.
 	//******************************************************************** */
 
-	function fetchRemoteData() {
-		getsuperHeroes();
-		//getvillains();
-		console.log("in the if...");
-		init();
+	init();
+	function init() {
+		
+		if (!fetchStoredData()) {
+		// 	//getsuperHeroes();
+		// 	//getvillains();
+		// 	console.log("in the if...");
+			stackDecks();
+			console.log("after stacking deck ", computerDeck, playerDeck);
+		};
+		computerTopCard = 0;
+		playerTopCard = 0;
+		playerWins = 0;
+		computerWins = 0;
+		gameDraws = 0;
+		gameOver = false;
+		startOver = false;
+		loadPage()
+		
+		//console.log("comp deck: "+computerDeck, "player deck: "+playerDeck);
 	};
+
 	
 	function loadPage () {
 		displayCard(startCard, "#playerCards");
@@ -73,28 +90,18 @@ $(document).ready(function () {
 		displayCardStats(startCard, "#computerCardStats");
 	}
 
-	function fetchStoredData() {
-		// var storedVillians = localStorage.getItem("villains");
-		var storedSuperheroes = localStorage.getItem("superHeroes");
-
-		// if (storedVillians != "") {
-		// 	if (storedVillians != null) {
-		// 		villains = JSON.parse(storedVillians);
-				if (storedSuperheroes != "") {
-					if (storedSuperheroes != null) {
-						superHeroes = JSON.parse(storedSuperheroes);
-						stackDecks();
-						computerTopCard = 0;
-						playerTopCard = 0;
-						return true;
-					}
-				}
-				alert("You have no cards. Please press Fetch")
-				return false;
-		// 	}
-		// }
-		// return false;
+	function fetchRemoteData() {
+		getsuperHeroes();
+		//getvillains();
+		console.log("in the if...");
+		init();
 	};
+
+	$("#letsPlay").on("click", function(event) {
+
+		renderNewCards("player");
+
+	});
 
 	function getsuperHeroes() {
 		const settings = {
@@ -120,36 +127,34 @@ $(document).ready(function () {
 		});
 	};
 
-	function init() {
-		
-		if (!fetchStoredData()) {
-		// 	//getsuperHeroes();
-		// 	//getvillains();
-		// 	console.log("in the if...");
-			stackDecks();
-			console.log("after stacking deck ", computerDeck, playerDeck);
-		};
-		computerTopCard = 0;
-		playerTopCard = 0;
-		playerWins = 0;
-		computerWins = 0;
-		gameDraws = 0;
-		gameOver = false;
-		startOver = false;
-		loadPage()
-		
-		//console.log("comp deck: "+computerDeck, "player deck: "+playerDeck);
+	function fetchStoredData() {
+		// var storedVillians = localStorage.getItem("villains");
+		var storedSuperheroes = localStorage.getItem("superHeroes");
+
+		// if (storedVillians != "") {
+		// 	if (storedVillians != null) {
+		// 		villains = JSON.parse(storedVillians);
+				if (storedSuperheroes != "") {
+					if (storedSuperheroes != null) {
+						superHeroes = JSON.parse(storedSuperheroes);
+						stackDecks();
+						computerTopCard = 0;
+						playerTopCard = 0;
+						return true;
+					}
+				}
+				alert("You have no cards. Please press Fetch")
+				return false;
+		// 	}
+		// }
+		// return false;
 	};
-
-	init();
-
 
 	$("#fetchData").on("click", function(event) {
 
 		fetchRemoteData();
 
 	});
-
 
 	function renderNewCards(winner) {
 		displayCard(playerDeck, "#playerCards");
@@ -171,18 +176,6 @@ $(document).ready(function () {
 			$("#computerStatus").html("<h4>Choose your Power!</h4>");
 		}
 	};
-
-	// event listener to trigger the computer to play
-	$(document).on("click", ".playerPlay", function(event) {
-		event.preventDefault();
-		playerPrefStat = $(this).attr("id");
-		console.log("player pref stat: " + playerPrefStat);
-		displayCard(computerDeck, "#computerCards");
-		displayCardStats(computerDeck, "#computerCardStats");
-		console.log("about to game on player side");
-		gameOn(playerPrefStat, event);
-		console.log("returning from player game on");
-	});
 	
 	// event listener to trigger the player to play
 	$(document).on("click", ".computerPlay", function(event) {
@@ -214,11 +207,6 @@ $(document).ready(function () {
 
 	});
 
-	$("#letsPlay").on("click", function(event) {
-
-		renderNewCards("player");
-
-	});
 
 	function getComputerPrefStat() {
 		var compPowerstats = computerDeck[0].powerstats;
@@ -255,26 +243,17 @@ $(document).ready(function () {
 		return index;
 	};
 
-	
-	function getRandomNum(number) {
-		return Math.floor(Math.random()*number);
-	};
-	
-
-	function stackDecks() {
-		// this is what we need to use in the end!!!! i.e change the for loop! (I find anything above 5 length could make the game very long)
-		//for (var i=0; i<superHeroes.length/2; i++) {
-			playerDeckCount = 0;
-			computerDeckCount = 0;
-			for (var i=0; i<=2; i++) { // remember to take this out after testing and reinsert the real one
-			playerDeck.push(superHeroes[getRandomNum(superHeroes.length)]);
-			computerDeck.push(superHeroes[getRandomNum(superHeroes.length)]);
-			// playerDeck.push(villains[getRandomNum(villains.length)]);
-			// computerDeck.push(villains[getRandomNum(villains.length)]);
-			playerDeckCount++;
-			computerDeckCount++;
-		}
-	};
+	// event listener to trigger the computer to play
+	$(document).on("click", ".playerPlay", function(event) {
+		event.preventDefault();
+		playerPrefStat = $(this).attr("id");
+		console.log("player pref stat: " + playerPrefStat);
+		displayCard(computerDeck, "#computerCards");
+		displayCardStats(computerDeck, "#computerCardStats");
+		console.log("about to game on player side");
+		gameOn(playerPrefStat, event);
+		console.log("returning from player game on");
+	});
 
 	function gameOn(prefs, event) {
 
@@ -352,13 +331,17 @@ $(document).ready(function () {
 		}
 
 
-		$("#gameStats").empty();
-		var gameStats = $("<h4>").text("Player Wins: "+playerWins+"  Computer Wins: "+computerWins+"  Draws: "+gameDraws);
-		var finished = $("<h4>").text("We are Done! ");
-		if (computerDeckCount === 0 || playerDeckCount === 0 || gameOver === true) {
+		$(".game-stats").empty();
+		var gameStats = $("<div class='game-stats'>");
+		var pScore = $("<p class='showScores'>" + "Player Wins: " + "<span class='score'>" + playerWins + "</span>");
+		var cScore = $("<p class='showScores'>" + "Computer Wins: " + "<span class='score'>" + computerWins + "</span>");
+		var dScore = $("<p class='showScores'>" + "Draws: " + "<span class='score'>" + gameDraws + "</span>");
+	
+		var finished = $("<h2>").text("Game Over!");
+		if (computerDeckCount === 0 || playerDeckCount === 0) {
 			displayCard(startCard, "#playerCards");
 			displayCard(startCard, "#computerCards");
-			$("#gameStats").append(gameStats, finished);
+			$(".game-stats").html(finished);
 			$(".computerPlay").prop("disabled", true);
 			$(".playerPlay").prop("disabled", true);
 			$("#computerStatus").empty();
@@ -371,7 +354,8 @@ $(document).ready(function () {
 			return;
 		}
 		else {
-			$("#gameStats").append(gameStats);
+			$(".results").append(gameStats);
+			$(gameStats).append(pScore, cScore, dScore);
 			
 		}
 
@@ -422,12 +406,32 @@ $(document).ready(function () {
 			location.reload(true);
 	});
 
+	function getRandomNum(number) {
+		return Math.floor(Math.random()*number);
+	};
+	
+
+	function stackDecks() {
+		// this is what we need to use in the end!!!! i.e change the for loop! (I find anything above 5 length could make the game very long)
+		//for (var i=0; i<superHeroes.length/2; i++) {
+			playerDeckCount = 0;
+			computerDeckCount = 0;
+			for (var i=0; i<=1; i++) { // remember to take this out after testing and reinsert the real one
+			playerDeck.push(superHeroes[getRandomNum(superHeroes.length)]);
+			computerDeck.push(superHeroes[getRandomNum(superHeroes.length)]);
+			// playerDeck.push(villains[getRandomNum(villains.length)]);
+			// computerDeck.push(villains[getRandomNum(villains.length)]);
+			playerDeckCount++;
+			computerDeckCount++;
+		}
+	};
+
 	function displayCardStats(player, cardId) {
 		if (cardId === "#computerCardStats") {
 			if((cardId === "#computerCardStats" && computerDeckCount > 0) || 
 			(cardId === "#playerCardStats" && playerDeckCount > 0) ) {
 				var card = $("<div>").addClass("card");
-				var name = $("<h4>").text(player[0].name);
+				var name = $("<h4>").text("Card Count - " + computerDeckCount.valueOf());
 		
 				var power = $("<button>").attr({class: "btn btn-outline computerPlay", id: "33"});
 				power.append($("<p>").text("Power: " + player[0].powerstats.power));
@@ -459,7 +463,7 @@ $(document).ready(function () {
 			if((cardId === "#computerCardStats" && computerDeckCount > 0) || 
 				(cardId === "#playerCardStats" && playerDeckCount > 0) ) {
 				var card = $("<div>").addClass("card");
-				var name = $("<h4>").text(player[0].name);
+				var name = $("<h4>").text(playerDeckCount.valueOf() + " - Card Count");
 		
 				var power = $("<button>").attr({class: "btn btn-outline playerPlay", id: "3"});
 				power.append($("<p>").text("Power: " + player[0].powerstats.power));
