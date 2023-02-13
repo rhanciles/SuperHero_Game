@@ -34,8 +34,7 @@ $(document).ready(function () {
 			"lg": ""
 		}
 	}]
-
-
+	
 	// this is only whilst testing!!
 	// ALWAYS FETCH THE SUPERHEROES & VILLIANS DATA VIA THE SERVER API!!!!!!!!
 	// THAT WAY WE GET A RAMDOM SELECTION OF HEROES & VILLAINS!!!!!!!!!!!!!!!!

@@ -16,6 +16,7 @@
 
 
 <body>
+ 
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,6 +27,7 @@
     <div id="navbarNav" class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item">
+
           <a class="nav-link" href="./biography.html">Character Bios</a>
         </li>
         <li class="nav-item">
@@ -35,6 +37,79 @@
         <li class="nav-item">
          <!-- this will be a modal -->
           <a id="about-us-btn" class="nav-link" href="#">About Us</a> 
+
+          <a class="nav-link" href="#"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+            Character Bios</button></a>
+        </li>
+        <li class="nav-item">
+           <!-- this will be a modal -->
+           
+            
+
+          <a class="nav-link" href="#"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#HowtoPlay">
+            How to Play</button></a>
+            <div class="modal fade" id="HowtoPlay" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">How to Play </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Please see a video how to play Top Trumps Cards below
+                    <iframe width="420" height="345"
+                    src="https://www.youtube.com/embed/FqlXsknYoa0">
+                    </iframe>
+            
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+        </li>
+        <li class="nav-item">
+          <!-- this will be a modal -->
+          
+          <a class="nav-link" href="#">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AboutUs">About Us</button></a> 
+        
+          <li class="nav-item">
+            <!-- this will be a modal -->
+
+           <a class="nav-link" href="#"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Instructions">
+            
+            Instructions</button></a>
+            <div class="modal fade" id="Instructions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p> 1. Player(user) and computer have an equal number of cards in the start of the game.</p>
+                    <p> 2. User will start the game by default</p>
+                    <p> 3. There are 6 stats with a corresponding value : combat, durability, intelligence, power, speed and strength</p>
+                    <p> 4. User can view its card but it cannot see computers card until they have chosen the stat to battle</p>
+                    <p> 5. User will choose 1 out of 6 stats, if the value of the stat is higher than the value of stat in the computer card, user will win</p>
+                    <p> 6. Vice versa, Computer will win</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+
         </li>
       </ul>
     </div>
@@ -121,6 +196,9 @@
     <!-- Moment.js note: we may need this later, if not then we can drop it-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 
