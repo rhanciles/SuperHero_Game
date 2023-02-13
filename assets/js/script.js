@@ -26,7 +26,7 @@ $(document).ready(function () {
 		}
 	}]
 
-console.log('Point 1')
+
 	// this is only whilst testing!!
 	// ALWAYS FETCH THE SUPERHEROES & VILLIANS DATA VIA THE SERVER API!!!!!!!!
 	// THAT WAY WE GET A RAMDOM SELECTION OF HEROES & VILLAINS!!!!!!!!!!!!!!!!
@@ -36,11 +36,11 @@ console.log('Point 1')
 	 working with the data locally
 	****************************************************************************************/
 	if (fetchStoredData()) {
-		getsuperHeroes();
-		getvillains();
+		//getsuperHeroes();
+		//getvillains();
 	};
 
-console.log('Point 2')
+
 
 	stackDecks();
 	displayCard(playerDeck, playerTopCard, "#playerCards");
@@ -59,7 +59,7 @@ console.log('Point 2')
 		console.log(pref);
 //console.log(playerDeck[playerTopCard].powerstats.pref[0]);
 
-console.log('Point 3')
+
 		var preference = pref[playerPrefStat].toString();
 		var playerPrefs = playerDeck[playerTopCard].powerstats.$(preference);// .powerstats.preference;
 		var compPrefs = computerDeck[computerTopCard].powerstats.$(preference);
@@ -77,8 +77,6 @@ console.log(compPrefs);//.preference.toString());
 			console.log("its a draw");
 		}
 	});
-
-console.log('Point 4')
 
 	function getsuperHeroes() {
 		const settings = {
@@ -104,7 +102,6 @@ console.log('Point 4')
 		});
 	};
 
-console.log('Point 5')
 	function getvillains() {
 		const settings = {
 			"async": true,
@@ -129,7 +126,6 @@ console.log('Point 5')
 		});
 	};
 
-	console.log('Point 6')
 	function fetchStoredData() {
 		var storedVillians = localStorage.getItem("villains");
 		var storedSuperheroes = localStorage.getItem("superHeroes");
@@ -144,10 +140,8 @@ console.log('Point 5')
 		return false;
 	};
 
-console.log('Point 7')
-
 	function stackDecks() {
-		for (var i=0; i<superHeroes.length; i++) {
+		for (var i=0; i<superHeroes.length/2; i++) {
 			playerDeck.push(superHeroes[getRandomNum(superHeroes.length)]);
 			computerDeck.push(superHeroes[getRandomNum(superHeroes.length)]);
 			playerDeck.push(villains[getRandomNum(villains.length)]);
@@ -155,8 +149,6 @@ console.log('Point 7')
 		}
 
 	};
-
-console.log('Point 8')
 
 	function getRandomNum(number) {
 		return Math.floor(Math.random()*number);
@@ -190,8 +182,6 @@ console.log('Point 8')
 
 	};
 
-console.log('Point 9')
-
 	function displayCard(player, index, cardId) {
 		var card = $("<div>").addClass("card");
 		var name = $("<h4>").text(player[index].name);
@@ -202,4 +192,4 @@ console.log('Point 9')
 	};
 });
 
-console.log('Point 10')
+  
