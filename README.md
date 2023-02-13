@@ -1,6 +1,8 @@
 ## SuperHero_Game
 Card Game that generates 2 Random Super-Hero Cards
 
+
+=======
 Project title: Super Hero Trump Cards
 
 Project Description: Card Game that generates 2 Random Super-Hero Cards and based on the user selection,
@@ -24,3 +26,4 @@ Group breakdown:
 3. Ranjit: APIs & JS/jQuery
 4. Ryan: HTML, Client-side storage, User Interaction & Wireframe
 5. Sandra: User Story, README, polished UI, Boostrap & modals, CSS & HTML
+

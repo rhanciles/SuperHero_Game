@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./assets/css/biography.css" />
+  <title>Biography Page</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="./index.html">Superhero Game</a>
+    <button id="navbarToggler" class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Character Bios</a>
+        </li>
+        <li class="nav-item">
+          <!-- this will be a modal -->
+          <a id="how-to-play-btn" class="nav-link" href="#">How to Play</a>
+        </li>
+        <li class="nav-item">
+         <!-- this will be a modal -->
+          <a id="about-us-btn" class="nav-link" href="#">About Us</a> 
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div id="how-to-play-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>How To Play</h2>
+      <p>info </p>
+    </div>
+  </div>
+
+  <div id="about-us-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>About Us</h2>
+      <p>info </p>
+    </div>
+  </div>
+
+
+  <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
+    <h1>Superhero & Villian Index</h1>
+  </header>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 col-md-3">
+        
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" id="search-button">Find Character!</button>
+          </div>
+          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id="user-input">
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3">
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 col-md-3">
+       
+      </div>
+      <div class="col-sm-6 col-md-6" id="biography-container">
+        
+      </div>
+      <div class="col-sm-3 col-md-3">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./assets/js/biography.js"></script>
+
+</body>
+
+<footer> 
+
+</footer>
+
+</html>
