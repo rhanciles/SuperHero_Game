@@ -79,15 +79,15 @@ h4 {
   font-weight: bold;
   letter-spacing: 2px;
   height: 3.2rem;
-  padding-top: 0.6rem;
+  padding-top: 0.7rem;
   margin-top: 0.3rem;
   /* line-height: 1.1; */
   opacity: unset;
 }
 
-#play {
-  margin-top: 0.6rem;
-  margin-bottom: 1rem;
+#letsPlay {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
   font-size: 1.2rem;
   border: 2px solid;
   border-color: white;
