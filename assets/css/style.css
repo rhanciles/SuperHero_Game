@@ -14,6 +14,10 @@ body {
   margin-top: 2rem;
 }
 
+.bg-dark {
+  background-color: rgba(15, 14, 14, 0.274) !important;
+  height: 7rem;
+}
 /* .card {
   height: 300px;
   width: 200px;
@@ -70,8 +74,9 @@ h4 {
   font-weight: bold;
   letter-spacing: 2px;
   height: 3.2rem;
-  padding-top: 0.7rem;
+  padding-top: 0.6rem;
   margin-top: 0.3rem;
+  /* line-height: 1.1; */
   opacity: unset;
 }
 
@@ -82,5 +87,23 @@ h4 {
   border: 2px solid;
   border-color: white;
 }
+
+@media screen and (max-width: 1140px) {
+  .btn {
+    font-stretch: condensed;
+    padding-top: 0.5rem;
+    line-height: 1.1;
+  }
+  .bg-dark {
+    height: 7rem;
+  }
+  h1 {
+    text-align: left;
+    margin-top: 3rem;
+    margin-left: 1.9rem;
+    line-height: 1;
+  }
+}
+
   
   
