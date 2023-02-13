@@ -11,8 +11,13 @@ APIkey = "10220548467573520";
 function superheroIndex() {
   searchBtn.on("click", function (event) {
     event.preventDefault();
+
     biographyContainer.empty()
     var findHero = userInput.val().trim();
+    console.log(findHero);
+    if(findHero) {
+
+
     var queryURL =
       "https://www.superheroapi.com/api.php/" + APIkey + "/search/" + findHero;
       
@@ -20,7 +25,7 @@ function superheroIndex() {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
+      //console.log(response);
 
       // Loop over results to get all versions of specific character.
       for (var i = 0; i < response.results.length; i++) {
@@ -123,6 +128,7 @@ function superheroIndex() {
         }
       }
     });
+  }
   });
 }
 superheroIndex();

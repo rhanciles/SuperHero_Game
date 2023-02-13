@@ -34,8 +34,7 @@ $(document).ready(function () {
 			"lg": ""
 		}
 	}]
-
-
+	
 	// this is only whilst testing!!
 	// ALWAYS FETCH THE SUPERHEROES & VILLIANS DATA VIA THE SERVER API!!!!!!!!
 	// THAT WAY WE GET A RAMDOM SELECTION OF HEROES & VILLAINS!!!!!!!!!!!!!!!!
@@ -479,4 +478,60 @@ console.log("game over: ", gameOver);
 	};
 });
 
+// toggle the navigation start
+
+$(document).ready(function() {
+	$(".navbar-toggler").click(function() {
+	  $("#navbarNav").toggle();
+	});
+  });
   
+  // toggle naivgation end
+
+  
+  // modal for about us
+
+$(document).ready(function() {
+	var aboutUsBtn = $('#about-us-btn');
+	var aboutUsModal = $('#about-us-modal');
+	var span = $('.close-btn');
+  
+	aboutUsBtn.on('click', function() {
+	  aboutUsModal.show();
+	});
+  
+	span.on('click', function() {
+	  aboutUsModal.hide();
+	});
+  
+	$(window).on('click', function(event) {
+	  if (event.target == aboutUsModal[0]) {
+		aboutUsModal.hide();
+	  }
+	});
+  });
+  
+
+  // modal for how to play 
+
+  $(document).ready(function() {
+	var htpBtn = $('#how-to-play-btn');
+	var htpModal = $('#how-to-play-modal');
+	var span = $('.close-btn');
+  
+	htpBtn.on('click', function() {
+	  htpModal.show();
+	});
+  
+	span.on('click', function() {
+	  htpModal.hide();
+	});
+  
+	$(window).on('click', function(event) {
+	  if (event.target == htpModal[0]) {
+		htpModal.hide();
+	  }
+	});
+  });
+  
+
