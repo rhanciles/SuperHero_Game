@@ -7,11 +7,16 @@ body {
 .card {
   height: 45vh;
   border-radius: 0.5rem;
-  background-color: rgba(240, 248, 255, 0.250);
+  background: none;
 }
 
 .container {
   margin-top: 2rem;
+}
+
+#playerCards,
+#computerCards {
+  background-color: rgba(240, 248, 255, 0.250);
 }
 
 .bg-dark {
