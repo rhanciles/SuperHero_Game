@@ -43,48 +43,36 @@
     </header>
 
     <div class="container">
-      <!-- <hr /> -->
-      <div class="row row-cols-1 row-cols-md-3">
-        <div class="col mb-3">
-          <div class="card" id="playerCards">
-            <div class="card-body">
-              <h4 class="card-title">Your cards</h4>
-              <p class="card-text">Welcome, please make a choice to start the game</p>
-            </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-3">
+          <h4>your cards</h4>
+          <div id="playerCards"></div>
+        </div>
+        <div class="col-md-3">
+          <h4>your stats</h4>
+          <div id="playerCardStats">
+            <select id="playerChoice"></select>
           </div>
         </div>
-        <div class="col mb-3">
-          <div class="card" id="playerCardStats">
-            <div class="card-body">
-              <h4 class="card-title">Your Stats</h4>
-              <select id="playerChoice"></select>
-            </div>
+        <div class="col-md-3">
+          <h4>computer stats</h4>
+          <div id="computerCardStats">
+            <select id="compChoice"></select>
           </div>
         </div>
-        <div class="col mb-3">
-          <div class="card" id="computerCardStats">
-            <div class="card-body">
-              <h4 class="card-title">Computer Stats</h4>
-              <select id="compChoice"></select>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-3">
-          <div class="card" id="computerCards">
-            <div class="card-body">
-              <h4 class="card-title">Computer's Cards</h4>
-              <p class="card-text">Computer's choice will appear here</p>
-            </div>
-          </div>
+        <div class="col-md-3">
+          <h4>Computer's cards</h4>
+          <div id="computerCards"></div>
         </div>
       </div>
-      <!-- <hr /> -->
+      <hr />
       <div class="row">
         <div class="col-md-12">
           <button id="play" class="btn btn-primary">Play</button>
         </div>
       </div>
-      <!-- <hr /> -->
+      <hr />
       <div class="row">
         <div class="col-md-12">
           <h2>Result:</h2>
