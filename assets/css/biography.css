@@ -58,7 +58,7 @@ background-color: rgba(4, 4, 4, 0.85);
 
 .listitems {
     list-style-type: none;
-    margin: 10px;
+    margin: 20px;
     margin-left: 0;
 }
 
@@ -142,4 +142,12 @@ background-color: rgba(4, 4, 4, 0.85);
 }
 #back {
     border-radius: 0 !important;
+}
+.listbuttons {
+    background-color: red !important;
+    color: white;
+    -webkit-text-stroke: black 1px;
+    text-align-last: right;
+
+
 }

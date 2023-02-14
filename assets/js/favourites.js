@@ -38,7 +38,7 @@ function renderLi() {
     var listItem = $("<li>")
       .text(storedCharacter[i].name)
       .addClass("listitems");
-    var listBtn = $("<button>").text("X").attr("id", storedCharacter[i].name);
+    var listBtn = $("<button>").text("X").attr("id", storedCharacter[i].name).addClass("listbuttons btn btn-info float-right text-right")
 
     listItem.append(listBtn);
     // console.log(listItem);
