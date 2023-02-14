@@ -4,11 +4,14 @@
 
 }
 body {
-    background-image: url("../assets/images/Bkgnd-maxres.jpg");
+    background-image: url("../images/Bkgnd-maxres.jpg");
     background-size: cover;
 
 }
-
+.bodystyling {
+    background-image: url("../images/Bkgnd-maxres.jpg");
+    background-size: contain;
+}
 
 footer {
     padding: 30px;
@@ -113,4 +116,8 @@ background-color: rgba(4, 4, 4, 0.85);
 #f-heading {
     color: white;
     text-decoration: underline;
+    text-align: center;
+}
+.bg-dark {
+    background-color: rgba(4, 4, 4, 0.85) !important;
 }

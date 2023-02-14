@@ -15,7 +15,7 @@ function superheroIndex() {
     event.preventDefault();
     biographyContainer.empty();
     var findHero = userInput.val().trim();
-    console.log(findHero);
+    // console.log(findHero);
     if(findHero) {
 
 
@@ -30,13 +30,16 @@ function superheroIndex() {
 
       // Loop over results to get all versions of specific character.
       for (var i = 0; i < response.results.length; i++) {
+        console.log(response.results[i].name)
         // Find and create Img.
         var superheroImg =
           response.results[i].image.url ||
           "https://via.placeholder.com/240x320.png";
         var img = $("<img>").attr("src", superheroImg).addClass("img-fluid imgstyling");
 
-        document.body.style.cssText = 'background-image: url("../assets/images/Bkgnd-maxres.jpg"); background-size: contain;'
+        // document.body.style.cssText = "background-image: url('../images/background-image.jpeg'); background-size: contain;"
+        $("#bodystyling").addClass
+
         
 
         // Create HR tag to seperate content
@@ -255,7 +258,7 @@ function superheroIndex() {
 
         function storeCharacter() {
           // Stringify and set "todos" key in localStorage to todos array
-          var favouriteCharacter = [response.results[i].name]
+          var favouriteCharacter = {name: response.results[i].name}
           console.log(favouriteCharacter)
           localStorage.setItem("favouriteCharacter", JSON.stringify(favouriteCharacter));
           
@@ -264,7 +267,7 @@ function superheroIndex() {
         
         function renderFavouritePage() {
           addFavBtn.on("click", function(){
-          window.location.href = "favourites.html"
+          window.location.href = "./biography/favourites.html"
         })
       
         }
@@ -278,23 +281,3 @@ function superheroIndex() {
 }
 superheroIndex();
 
-
-        // // When form is submitted...
-        // todoForm.addEventListener("submit", function(event) {
-        //   event.preventDefault();
-        
-        //   var todoText = todoInput.value.trim();
-        
-        //   // Return from function early if submitted todoText is blank
-        //   if (todoText === "") {
-        //     return;
-        //   }
-        
-        //   // Add new todoText to todos array, clear the input
-        //   todos.push(todoText);
-        //   todoInput.value = "";
-        
-        //   // Store updated todos in localStorage, re-render the list
-        //   storeTodos();
-        //   renderTodos();
-        // });
