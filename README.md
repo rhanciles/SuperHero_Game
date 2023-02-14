@@ -3,16 +3,17 @@ Card Game that generates 2 Random Super-Hero Cards
 
 Project title: Super Hero Trump Cards
 
-Project Description: Card Game that generates 2 Random Super-Hero Cards and based on the user selection,
-provides scores and generates results after certain rounds. Biography site for Super-Heroes that displays their appearance, aliases, power-stats, and many more.
+Project Description: Card Game that generates 2 Random Super-Hero or Villains Cards and based on the user selection,
+provides scores and generates results after certain rounds. Biography site displays Super Heroes and Villains details,
+for example appearance, power-stats.
 
 User Story:
-As a player, I want to play and enjoy the game by using my cards with my favourite heroes:
-As a player, I want to see the results after certain rounds,
-As a player, I want to be able to see a biography of Super-Heroes that displays their appearance, aliases,
-Power-stats, and many more.
-As a player, I want to be able to play several times in a row.
-As a player, I want to be able to choose Super-Hero I will be playing with for each round.
+As a player, I want to play against computer and enjoy the game by using cards with Super Heroes and Villains,
+As a player, I want to see the results after each round,
+As a player, I want to be able to play a few times in a row.
+As a player, I want to be able to choose Power Stat each round.
+As a player, I want to be able to see a biography of Super-Heroes and Villans that displays their details, e.g. Power-Stats.
+As a player, I want to be able to add Super-Heroes and Villains to my favourite and reset the list.
 
 Wireframe or sketch of the design:
 APIs: https://superheroapi.com/  and https://rapidapi.com/jakash1997/api/superhero-search
