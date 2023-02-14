@@ -545,10 +545,19 @@ $(document).ready(function() {
 	  if (event.target == aboutUsModal[0]) {
 		aboutUsModal.hide();
 	  }
+
+
 	});
+
+	  
   });
 
-  
+
+  $(document).ready(function() {
+	$(".github-btn").click(function() {
+	  window.open($(this).data("url"), "_blank");
+	});
+  });
   
 
   // modal for how to play 
