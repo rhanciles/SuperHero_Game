@@ -90,6 +90,7 @@ $(document).ready(function () {
 		displayCardStats(startCard, "#computerCardStats");
 	}
 
+
 	function fetchRemoteData() {
 		getsuperHeroes();
 		//getvillains();
@@ -502,6 +503,159 @@ $(document).ready(function () {
 			$(cardId).html(card);
 		}
 	};
+
+
+	$('#computerCards').animate({
+        height: '5%',
+        width: '5%',
+        left: '16rem'
+    }, 
+    {    
+        duration: 10,
+        complete: function () {
+            $(this).animate({
+                height: '100%',
+                width: '100%',
+                left: ''
+            }, 1400, "linear",
+
+            );
+        },
+
+    });
+
+    $('#playerCards').animate({
+        height: '5%',
+        width: '5%'
+    }, 
+    {    
+        duration: 10,
+        complete: function () {
+            $(this).animate({
+                height: '100%',
+                width: '100%'
+            }, 1400, "linear",
+
+            );
+        },
+
+    });
+
+	var duration = 0;
+	var compBtns = ['#00', '#11', '#22', '#33', '#44', '#55'];
+	// var duration = [1400, 1500, 1600, 1700, 1800, 1900];
+	for (i = 0; i < compBtns.length; i++) {
+		duration += 0.5
+		$(compBtns[i]).animate({
+			height: '2%',
+			width: '2%',
+			fontSize: '1%',
+			left: '16rem'
+		}, 
+		{    
+			duration: 10,
+			complete: function () {
+				$(this).animate({
+					height: '3.2rem',
+					width: '100%',
+					fontSize: '100%',
+					left: ''
+				},  140 * duration++,
+				
+				);
+
+			},
+
+		});
+
+	};
+
+	var userBtns = ['#0', '#1', '#2', '#3', '#4', '#5'];
+	
+	for (j = 0; j < compBtns.length; j++) {
+		duration += 0.5
+		$(userBtns[j]).animate({
+			height: '2%',
+			width: '2%',
+			left: '16rem',
+			fontSize: '1%'
+		}, 
+		{    
+			duration: 10,
+			complete: function () {
+				$(this).animate({
+					height: '3.2rem',
+					width: '100%',
+					fontSize: '100%',
+					left: ''
+				},  140 * duration++,
+				
+				);
+
+			},
+
+		});
+
+	};
+
+	$('#letsPlay').animate({
+		// width: '2%',
+		opacity: '0',
+		fontSize: '1%'
+	}, 
+	{    // options parameter 
+		duration: 10,
+		complete: function () {
+			$(this)
+			// .animate({ width: '100%'}, 1400 )
+			.animate({ opacity: '1'}, 2300 )
+			.animate({ fontSize: '100%'}, 2000 );
+				
+			}
+			
+		}
+
+	);
+
+	$('#startOver').animate({
+		width: '2%',
+		height: '2%',
+		fontSize: '1%'
+	}, 
+	{    // options parameter 
+		duration: 10,
+		complete: function () {
+			$(this)
+			.animate({ width: '100%'}, 1400 )
+			.animate({ height: '3.2rem'}, 800 )
+			.animate({ fontSize: '100%'}, 2000 );
+				
+			}
+			
+		}
+
+	);
+
+	$('#fetchData').animate({
+		width: '2%',
+		height: '2%',
+		fontSize: '1%'
+	}, 
+	{    // options parameter 
+		duration: 10,
+		complete: function () {
+			$(this)
+			.animate({ width: '100%'}, 1400 )
+			.animate({ height: '3.2rem'}, 800 )
+			.animate({ fontSize: '100%'}, 2000 );
+				
+			}
+			
+		}
+
+	);
+
+
 });
 
   
