@@ -5,8 +5,7 @@ var searchBtn = $("#search-button");
 var userInputValue = $("#user-input").val();
 // console.log(userInputValue
 var biographyContainer = $("#biography-container");
-
-
+var storedCharacter = JSON.parse(localStorage.getItem("stored")) || [];
 
 APIkey = "10220548467573520";
 
@@ -16,31 +15,32 @@ function superheroIndex() {
     biographyContainer.empty();
     var findHero = userInput.val().trim();
     // console.log(findHero);
-    if(findHero) {
+    if (findHero) {
+      var queryURL =
+        "https://www.superheroapi.com/api.php/" +
+        APIkey +
+        "/search/" +
+        findHero;
 
+      $.ajax({
+        url: queryURL,
+        method: "GET",
+      }).then(function (response) {
+        console.log(response);
 
-    var queryURL =
-      "https://www.superheroapi.com/api.php/" + APIkey + "/search/" + findHero;
+        // Loop over results to get all versions of specific character.
 
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (response) {
-      //console.log(response);
-
-      // Loop over results to get all versions of specific character.
-      for (var i = 0; i < response.results.length; i++) {
-        console.log(response.results[i].name)
+        // console.log(response.results[i].name)
         // Find and create Img.
         var superheroImg =
-          response.results[i].image.url ||
+          response.results[0].image.url ||
           "https://via.placeholder.com/240x320.png";
-        var img = $("<img>").attr("src", superheroImg).addClass("img-fluid imgstyling");
+        var img = $("<img>")
+          .attr("src", superheroImg)
+          .addClass("img-fluid imgstyling");
 
         // document.body.style.cssText = "background-image: url('../images/background-image.jpeg'); background-size: contain;"
-        $("#bodystyling").addClass
-
-        
+        $("#bodystyling").addClass;
 
         // Create HR tag to seperate content
 
@@ -49,7 +49,7 @@ function superheroIndex() {
         var hr2 = $("<hr>").addClass("hrstyling");
         // var hr3 = $("<hr>").addClass("hrstyling");
         // var hr4 = $("<hr>").addClass("hrstyling");
-
+        var hr6 = $("<hr>").addClass("hrstyling");
 
         // Create div to display appended API data.
 
@@ -60,35 +60,35 @@ function superheroIndex() {
 
         // Create biography info.
 
-        
-
         var superHeroName = $("<h2>")
-          .text(response.results[i].name)
-          .addClass("text-center font-weight-bold text-uppercase info namestyling");
+          .text(response.results[0].name)
+          .addClass(
+            "text-center font-weight-bold text-uppercase info namestyling"
+          );
 
         var biography = $("<ul>")
           .text("Biography")
           .addClass("text-left font-weight-bold infoheading ultitle");
 
         var fullname = $("<li>")
-          .text("Full name:" + " " + response.results[i].biography["full-name"])
+          .text("Full name:" + " " + response.results[0].biography["full-name"])
           .addClass("listitems");
         var placeofBirth = $("<li>")
           .text(
             "Place of Birth:" +
               " " +
-              response.results[i].biography["place-of-birth"]
+              response.results[0].biography["place-of-birth"]
           )
           .addClass("listitems");
         var firstAppearance = $("<li>")
           .text(
             "First appearance:" +
               " " +
-              response.results[i].biography["first-appearance"]
+              response.results[0].biography["first-appearance"]
           )
           .addClass("listitems");
         var publisher = $("<li>")
-          .text("Publisher:" + " " + response.results[i].biography.publisher)
+          .text("Publisher:" + " " + response.results[0].biography.publisher)
           .addClass("listitems");
 
         biographyContainer.append(dataDiv);
@@ -109,28 +109,28 @@ function superheroIndex() {
           .addClass("text-left font-weight-bold infoheading ultitle");
 
         var gender = $("<li>")
-          .text("Gender:" + " " + response.results[i].appearance.gender)
+          .text("Gender:" + " " + response.results[0].appearance.gender)
           .addClass("listitems");
         var hairColor = $("<li>")
           .text(
-            "Hair color:" + " " + response.results[i].appearance["hair-color"]
+            "Hair color:" + " " + response.results[0].appearance["hair-color"]
           )
           .addClass("listitems");
         var race = $("<li>")
-          .text("Race:" + " " + response.results[i].appearance.race)
+          .text("Race:" + " " + response.results[0].appearance.race)
           .addClass("listitems");
         var height = $("<li>")
           .text(
             "Height:" +
               " " +
-              Object.values(response.results[i].appearance.height)
+              Object.values(response.results[0].appearance.height)
           )
           .addClass("listitems");
         var weight = $("<li>")
           .text(
             "Weight:" +
               " " +
-              Object.values(response.results[i].appearance.weight)
+              Object.values(response.results[0].appearance.weight)
           )
           .addClass("listitems");
 
@@ -181,12 +181,12 @@ function superheroIndex() {
         // dataDiv.append(groupAffiliation, relatives, hr4);
 
         // Create Powerstats info and skills bar.
-        var combatValues = response.results[i].powerstats.combat;
-        var durabilityValues = response.results[i].powerstats.durability;
-        var intelligenceValues = response.results[i].powerstats.intelligence;
-        var powerValues = response.results[i].powerstats.power;
-        var speedValues = response.results[i].powerstats.speed;
-        var strengthValues = response.results[i].powerstats.strength;
+        var combatValues = response.results[0].powerstats.combat;
+        var durabilityValues = response.results[0].powerstats.durability;
+        var intelligenceValues = response.results[0].powerstats.intelligence;
+        var powerValues = response.results[0].powerstats.power;
+        var speedValues = response.results[0].powerstats.speed;
+        var strengthValues = response.results[0].powerstats.strength;
 
         var powerStats = $("<ul>")
           .text("Power Statistics")
@@ -252,32 +252,36 @@ function superheroIndex() {
 
         // Create Buttons
         var addFavBtn = $("<button>");
-        addFavBtn.text("+ Add to favourites List").addClass("btn btn-primary btn-lg btn-block")
-        dataDiv.append(addFavBtn)
+        addFavBtn
+          .text("+ Add to favourites List")
+          .addClass("btn btn-primary btn-lg btn-block namestyling");
+        var favBtn = $("<button>");
+        favBtn
+          .text("Go to my favourites")
+          .addClass("btn btn-primary btn-lg btn-block namestyling");
+        dataDiv.append(hr6, addFavBtn, favBtn);
 
+        function store() {
+          addFavBtn.on("click", function (e) {
+            e.preventDefault();
 
-        function storeCharacter() {
-          // Stringify and set "todos" key in localStorage to todos array
-          var favouriteCharacter = {name: response.results[i].name}
-          console.log(favouriteCharacter)
-          localStorage.setItem("favouriteCharacter", JSON.stringify(favouriteCharacter));
-          
+            var store = { name: response.results[0].name };
+            // console.log(store)
+
+            storedCharacter.push(store);
+            console.log(storedCharacter);
+            localStorage.setItem("stored", JSON.stringify(storedCharacter));
+          });
         }
-        storeCharacter()
-        
-        function renderFavouritePage() {
-          addFavBtn.on("click", function(){
-          window.location.href = "./biography/favourites.html"
-        })
-      
+        store();
+        function myfavourites() {
+          favBtn.on("click", function () {
+            location.href = "./favourites.html";
+          });
         }
-        renderFavouritePage()
-      
-
-      }
-    });
-  }
+        myfavourites();
+      });
+    }
   });
 }
 superheroIndex();
-

@@ -12,6 +12,9 @@ body {
     background-image: url("../images/Bkgnd-maxres.jpg");
     background-size: contain;
 }
+.header {
+    -webkit-text-stroke: rgba(130, 5, 248) 2px;
+}
 
 footer {
     padding: 30px;
@@ -79,22 +82,23 @@ background-color: rgba(4, 4, 4, 0.85);
 }
 .btn-outline-secondary {
     color: white !important;
-    -webkit-text-stroke: black 0.5px !important;
+    -webkit-text-stroke: black 1px !important;
     border-color: black !important;
 }
 .btn-outline-secondary:hover {
     color: #fff !important;
-    -webkit-text-stroke: black 0.5px !important;
+    -webkit-text-stroke: black 1px !important;
     background-color: rgba(130, 5, 248, 0.314) !important;
     border-color: black !important;
 }
 .btn {
-    background-color: rgba(130, 5, 248) !important
+    background-color: rgba(130, 5, 248) !important;
+    border:black !important
 }
 .btn-block {
     padding: 20px !important;
     width: 100% !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 0.5px !important;
 }
 .hrstyling {
     border: 1px solid rgba(243, 242, 244, 0.608)
@@ -108,16 +112,34 @@ background-color: rgba(4, 4, 4, 0.85);
 }
 .namestyling {
     background-color: rgba(130, 5, 248);
-    -webkit-text-stroke: black 0.5px;
+    -webkit-text-stroke: black 1px;
 }
 #user-input {
     border: 0.5px solid black
 }
 #f-heading {
     color: white;
-    text-decoration: underline;
     text-align: center;
+    background-color: rgba(130, 5, 248);
+    -webkit-text-stroke: black 2px;
+    font-size: 3rem;
 }
 .bg-dark {
     background-color: rgba(4, 4, 4, 0.85) !important;
+}
+#biography-container2 {
+    padding: 10px;
+    width: 100%;
+    margin-top: opx;
+    margin-bottom: 25px;
+    color: white;
+    background-color: rgba(4, 4, 4, 0.85);
+    list-style-type: none;
+}
+#reset {
+    border-radius: 0 !important;
+    background-color: red !important;
+}
+#back {
+    border-radius: 0 !important;
 }
