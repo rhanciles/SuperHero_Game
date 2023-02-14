@@ -21,8 +21,9 @@ nav a:hover {
 
 
 .row{
-  background-image: url(../images/background-image.jpeg);
+  background-color: grey;
 }
+
 .card {
     height: 300px;
     width: 200px;
@@ -35,7 +36,8 @@ nav a:hover {
     border-radius: 10px;
     box-shadow: 10px 10px 5px lightblue;
     margin: 10px;
-  }
+  } 
+ 
 
   h4 {
       text-align: center;
