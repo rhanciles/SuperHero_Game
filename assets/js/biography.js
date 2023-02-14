@@ -9,11 +9,21 @@ var storedCharacter = JSON.parse(localStorage.getItem("stored")) || [];
 
 APIkey = "10220548467573520";
 
-function superheroIndex() {
   searchBtn.on("click", function (event) {
-    event.preventDefault();
+  renderSuperHero()
+  });
+  userInput.keyup(function(e){ 
+    if (e.keyCode == 13) {
+      renderSuperHero(e)
+      e.preventDefault()
+    }
+    })
+  
+
+  function renderSuperHero () {
     biographyContainer.empty();
     var findHero = userInput.val().trim();
+    
     // console.log(findHero);
     if (findHero) {
       var queryURL =
@@ -282,6 +292,5 @@ function superheroIndex() {
         myfavourites();
       });
     }
-  });
-}
-superheroIndex();
+  }
+
