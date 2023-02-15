@@ -3,22 +3,32 @@
     font-family: 'Bangers', cursive;
 
 }
+
 body {
     background-image: url("../images/Bkgnd-maxres.jpg");
     background-size: cover;
 
 }
+
 /* .bodystyling {
     background-image: url("../images/Bkgnd-maxres.jpg");
     background-size: contain;
 } */
 
+.p-2 {
+    background-color: rgba(15, 14, 14, 0.274) !important;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
 footer {
     padding: 30px;
 }
+
 img {
     width: 100%;
 }
+
 .borderstyle {
 border: 5px solid white !important;
 border-top: 0px !important;
@@ -44,8 +54,8 @@ color: white;
 font-size: large;
 letter-spacing: 1px;
 background-color: rgba(4, 4, 4, 0.85);
-
 }
+
 .infoheading {
     text-decoration: underline;
     font-size: x-large;
@@ -56,10 +66,12 @@ background-color: rgba(4, 4, 4, 0.85);
 
     
 }
+
 .info {
     margin: 5px;
     font-size: 3rem;
 }
+
 .ultitle {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -98,17 +110,18 @@ background-color: rgba(4, 4, 4, 0.85);
 .btn-outline-secondary {
     color: white !important;
     -webkit-text-stroke: black 0.5px !important;
-    border-color: black !important;
+    border-color: rgb(168, 160, 160) !important;
     padding-left: 15px;
     padding-right: 15px;
     font-size: large;
     letter-spacing: 1px;
 }
+
 .btn-outline-secondary:hover {
     color: #fff !important;
     -webkit-text-stroke: black 0.5px !important;
-    background-color: rgba(130, 5, 248, 0.314) !important;
-    border-color: black !important;
+    background-color: #6652fd !important;
+    border-color: #fdcc52 !important;
 }
 
 .form-control {
@@ -116,17 +129,21 @@ background-color: rgba(4, 4, 4, 0.85);
     letter-spacing: 1px;
     padding: 25px;
 }
-.btn {
+
+.bioBtn {
     background-color: rgb(85, 15, 150) !important
 }
+
 .btn-block {
     padding: 20px !important;
     width: 100% !important;
     margin-bottom: 20px !important;
 }
+
 .hrstyling {
     border: 1px solid rgba(243, 242, 244, 0.608)
 }
+
 .imgstyling {
     border: 5px solid white;
     border-bottom: 0px;
@@ -134,21 +151,25 @@ background-color: rgba(4, 4, 4, 0.85);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0px;
 }
+
 .namestyling {
     background-color: rgba(130, 5, 248);
     -webkit-text-stroke: black 0.5px;
 }
+
 #user-input {
     border: 0.5px solid black
 }
+
 #f-heading {
     color: white;
     text-decoration: underline;
     text-align: center;
 }
-.bg-dark {
+
+/* .bg-dark {
     background-color: rgba(4, 4, 4, 0.85) !important;
-}
+} */
 
 .bioPage {
     display: flex;
@@ -167,5 +188,11 @@ background-color: rgba(4, 4, 4, 0.85);
 .btn-primary {
     margin-top: 5px;
     margin-bottom: 5px;
-    outline: #fff;
+    border-color: white;
 }
+
+.btn-primary:hover {
+    color: white;
+    border-color: #fdcc52;
+    background-color: #6652fd !important;
+  }

@@ -1,7 +1,6 @@
 
 body {
   background-image: url(../images/Bkgnd-maxres.jpg);
-
 }
 
 .card {
@@ -19,9 +18,11 @@ body {
   background-color: rgba(240, 248, 255, 0.250);
 }
 
-.bg-dark {
+.p-2 {
   background-color: rgba(15, 14, 14, 0.274) !important;
   height: 7rem;
+  letter-spacing: 2px;
+  font-family: 'Bangers', cursive !important;
 }
 /* .card {
   height: 300px;
