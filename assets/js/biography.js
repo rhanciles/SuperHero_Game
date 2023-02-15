@@ -118,6 +118,26 @@ searchBtn.on("click", function (event) {
           // hr1
         );
 
+        $(imageContainer).animate({
+          // height: '5%',
+          // width: '5%',
+          left: '55rem'
+        }, 
+        {    
+          duration: 10,
+          complete: function () {
+              $(this).animate({
+                  height: '100%',
+                  width: '100%',
+                  left: ''
+              }, 2000,
+      
+              );
+          },
+      
+        });
+      
+
         // Create appearance info.
         var appearance = $("<ul>")
           .text("Appearance")
@@ -270,11 +290,11 @@ searchBtn.on("click", function (event) {
         var addFavBtn = $("<button>");
         addFavBtn
           .text("+ Add to favourites List")
-          .addClass("btn btn-primary btn-lg btn-block namestyling");
+          .addClass("bioBtn btn-primary btn-lg btn-block namestyling");
         var favBtn = $("<button>");
         favBtn
           .text("Go to my favourites")
-          .addClass("btn btn-primary btn-lg btn-block namestyling");
+          .addClass("bioBtn btn-primary btn-lg btn-block namestyling");
         textDiv.append(hr2, addFavBtn, hr6, favBtn);
 
         function store() {
@@ -297,6 +317,28 @@ searchBtn.on("click", function (event) {
         }
         myfavourites();
       });
+
+      $(textContainer).animate({
+        // height: '5%',
+        // width: '5%',
+        left: '-50rem'
+      }, 
+      {    
+        duration: 10,
+        complete: function () {
+            $(this).animate({
+                height: '100%',
+                width: '100%',
+                left: ''
+            }, 2000,
+    
+            );
+        },
+    
+      });
+    
     }
   }
+
+ 
 

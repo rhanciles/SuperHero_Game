@@ -11,11 +11,12 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./assets/css/biography.css" />
+  <link rel="stylesheet" href="./assets/css/menu.css" />
   <title>Biography Page</title>
 </head>
 
 <body id="bodystyling" class="bodystyling">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="./index.html">Superhero Game</a>
     <button id="navbarToggler" class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,17 +28,17 @@
         </li>
         <li class="nav-item">
           <!-- this will be a modal -->
-          <a id="how-to-play-btn" class="nav-link" href="#">How to Play</a>
+          <!-- <a id="how-to-play-btn" class="nav-link" href="#">How to Play</a>
         </li>
         <li class="nav-item">
          <!-- this will be a modal -->
-          <a id="about-us-btn" class="nav-link" href="#">About Us</a> 
+          <!-- <a id="about-us-btn" class="nav-link" href="#">About Us</a> 
         </li>
       </ul>
     </div>
-  </nav>
-  
-  <div id="how-to-play-modal" class="modal">
+  </nav> -->
+
+  <!-- <div id="how-to-play-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
       <h2>How To Play</h2>
@@ -51,15 +52,20 @@
       <h2>About Us</h2>
       <p>info </p>
     </div>
+  </div> -->
+
+  <div class="fxmenu">
+    <div class="fxcontainer">
+      <div class="toggle"></div>
+    </div><span class="hidden"><a href="index.html">Home </a></span><span class="hidden"><a href="biography.html">Bios</a></span><span class="hidden"><a href="#">Guide</a></span><span class="hidden"><a href="#">Contact</a></span>
   </div>
 
-
   <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
-    <h1>Superhero & Villian Index</h1>
+    <h1>Superhero Index</h1>
   </header>
-  <br>
+  <!-- <br> -->
 
-  <div class="container">
+  <div class="container" id="bios">
     <div class="row">
       <div class="col-sm-2 col-md-2 col-lg-2">
         
@@ -78,22 +84,14 @@
     </div>
   </div>
 
-
   <div class="container">
     <div class="row bioPage">
-      
       <div class="col-sm-8 col-md-8 col-lg-4" id="bioText">
-         
       </div>
-
       <div class="col-sm-8 col-md-8 col-lg-6" id="bioImage">
-        
       </div>
-
     </div>
   </div>
-
-
 
   <!-- Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
@@ -101,6 +99,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/js/biography.js"></script>
   <script src="./biography/favourites.js"></script>
+  <script src="./assets/js/menu.js"></script>
 
 </body>
 
