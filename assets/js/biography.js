@@ -9,7 +9,7 @@ var storedCharacter = JSON.parse(localStorage.getItem("stored")) || [];
 
 APIkey = "10220548467573520";
 
-  searchBtn.on("click", function (event) {
+  searchBtn.on("click", function () {
   renderSuperHero()
   });
   userInput.keyup(function(e){ 
@@ -49,7 +49,7 @@ APIkey = "10220548467573520";
           .attr("src", superheroImg)
           .addClass("img-fluid imgstyling");
 
-        // document.body.style.cssText = "background-image: url('../images/background-image.jpeg'); background-size: contain;"
+        // document.body.style.cssText = 'background-image: url("../images/Bkgnd-maxres.jpg"); background-size: cover;'
         $("#bodystyling").addClass;
 
         // Create HR tag to seperate content

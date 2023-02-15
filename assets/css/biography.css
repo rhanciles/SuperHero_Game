@@ -8,10 +8,11 @@ body {
     background-size: cover;
 
 }
+/*
 .bodystyling {
     background-image: url("../images/Bkgnd-maxres.jpg");
     background-size: contain;
-}
+} */
 .header {
     -webkit-text-stroke: rgba(130, 5, 248) 2px;
 }
