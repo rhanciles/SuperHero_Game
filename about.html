@@ -5,15 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/biography.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/menu.css" />
-  <title>Favourites Page</title>
+
+  <title>Superhero Game</title>
 </head>
 
 <body>
@@ -28,9 +29,9 @@
       <h1>Superhero Trump Cards</h1>
     </header>
 
-    <section>
-      <div class="card" id="aboutUs">
-        <div class="card-body col-sm-12 col-md-10 col-lg-10" id="pod5grp1">
+    <section id="aboutUs">
+      <div class="card">
+        <div id="pod5grp1" class="card-body col-sm-12 col-md-10 col-lg-10">
           <article class="card-text">
             <h3 class="card-title">About Us</h3>
             
@@ -40,9 +41,9 @@
           </article>
           <div id="pod5Btns">
             <button class="btn btn-outline github-btn ranj" data-url="https://github.com/ranjmak">Ranjit</button>
+            <button class="btn btn-outline github-btn sandra" data-url="https://github.com/SandraDeve">Sandra</button>
             <button class="btn btn-outline github-btn rod" data-url="https://github.com/rhanciles">Rod</button>
             <button class="btn btn-outline github-btn ryan" data-url="https://github.com/rbcheung">Ryan</button>
-            <button class="btn btn-outline github-btn sandra" data-url="https://github.com/SandraDeve">Sandra</button>
             <button class="btn btn-outline github-btn candice" data-url="https://github.com/candicewongls">Candice</button>
             <button class="btn btn-outline github-btn saqib" data-url="https://github.com/SIR-97">Saqib</button>
           </div>
@@ -53,13 +54,15 @@
     </section>
 
 
-    <!-- Moment.js -->
+    <!-- Moment.js note: we may need this later, if not then we can drop it-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="js/jquery-3.5.1.min.js"></script> -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
     <script src="./assets/js/fx.js"></script>
-    <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/menu.js"></script>
 
   </body>
 
