@@ -14,7 +14,7 @@
     transition: 1.3s cubic-bezier(0.53, 0, 0.15, 1.3);
 }
 .fxmenu.expanded {
-    width: 400px;
+    width: 430px;
 }
 span {
     padding: 9px;

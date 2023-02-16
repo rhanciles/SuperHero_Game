@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
     $('#computerCards').animate({
-        height: '5%',
-        width: '5%',
+        height: '2%',
+        width: '2%',
         left: '16rem'
     }, 
     {    
-        duration: 10,
+        duration: 5,
         complete: function () {
             $(this).animate({
                 height: '100%',
@@ -20,11 +20,11 @@ $(document).ready(function () {
     });
 
     $('#playerCards').animate({
-        height: '5%',
-        width: '5%'
+        height: '2%',
+        width: '2%'
     }, 
     {    
-        duration: 10,
+        duration: 5,
         complete: function () {
             $(this).animate({
                 height: '100%',
@@ -41,13 +41,13 @@ $(document).ready(function () {
 	for (i = 0; i < compBtns.length; i++) {
 		duration += 0.5
 		$(compBtns[i]).animate({
-			height: '2%',
-			width: '2%',
+			height: '1%',
+			width: '1%',
 			fontSize: '1%',
 			left: '16rem'
 		}, 
 		{    
-			duration: 10,
+			duration: 5,
 			complete: function () {
 				$(this).animate({
 					height: '3.2rem',
@@ -68,13 +68,13 @@ $(document).ready(function () {
 	for (j = 0; j < compBtns.length; j++) {
 		duration += 0.5
 		$(userBtns[j]).animate({
-			height: '2%',
-			width: '2%',
+			height: '1%',
+			width: '1%',
 			left: '16rem',
 			fontSize: '1%'
 		}, 
 		{    
-			duration: 10,
+			duration: 5,
 			complete: function () {
 				$(this).animate({
 					height: '3.2rem',
@@ -97,7 +97,7 @@ $(document).ready(function () {
 		fontSize: '1%'
 	}, 
 	{    // options parameter 
-		duration: 10,
+		duration: 5,
 		complete: function () {
 			$(this)
 			// .animate({ width: '100%'}, 1400 )
@@ -116,7 +116,7 @@ $(document).ready(function () {
 		fontSize: '1%'
 	}, 
 	{    // options parameter 
-		duration: 10,
+		duration: 5,
 		complete: function () {
 			$(this)
 			.animate({ width: '100%'}, 1200 )
@@ -135,7 +135,7 @@ $(document).ready(function () {
 		fontSize: '1%'
 	}, 
 	{    // options parameter 
-		duration: 10,
+		duration: 5,
 		complete: function () {
 			$(this)
 			.animate({ width: '100%'}, 1200 )
@@ -161,6 +161,26 @@ $(document).ready(function () {
             2000);
 
 	});
+
+	$('#aboutUs').animate({
+		width: '1%',
+		height: '1%',
+		fontSize: '1%'
+    }, 
+    {    
+        duration: 5,
+        complete: function () {
+            $(this).animate({
+				height: '100%',
+				width: '60vw',
+				fontSize: '100%',
+                
+            }, 2200,
+
+            );
+        },
+
+    });
 
 	$(favDiv).animate({
 		marginTop: '-600px',
