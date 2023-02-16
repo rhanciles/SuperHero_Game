@@ -9,89 +9,101 @@
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/menu.css" />
 
-  <title>Superhero game</title>
+  <title>Superhero Game</title>
 </head>
 
-<body>
+<body id="home">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Superhero Game</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Character Bios</a>
-        </li>
-        <li class="nav-item">
-           <!-- this will be a modal -->
-          <a class="nav-link" href="#">How to Play</a>
-        </li>
-        <li class="nav-item">
-          <!-- this will be a modal -->
-          <a class="nav-link" href="#">About Us</a> 
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="fxmenu">
+    <div class="fxcontainer">
+      <div class="toggle"></div>
+    </div><span class="hidden"><a href="index.html">Home </a></span><span class="hidden"><a href="biography.html">Bios</a></span><span class="hidden"><a href="#">Guide</a></span><span class="hidden"><a href="#">Contact</a></span>
+  </div>
   
     <header class="container-fluid text-center text-white bg-dark p-2">
-      <h1>Superhero Trump Cards Game</h1>
+      <h1>Superhero Trump Cards</h1>
     </header>
 
     <div class="container">
-      <hr />
-      <div class="row">
-        <div class="col-md-3">
-          <h4>your cards</h4>
-          <div id="playerCards"></div>
-        </div>
-        <div class="col-md-3">
-          <h4>your stats</h4>
-          <div id="playerCardStats">
-            <select id="playerChoice"></select>
+      <!-- <hr /> -->
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-3">
+          <div class="card" id="playerCards">
+            <div class="card-body">
+              <h4 class="card-title">Your cards</h4>
+              <p class="card-text">Welcome, please make a choice to start the game</p>
+            </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <h4>computer stats</h4>
-          <div id="computerCardStats">
-            <select id="compChoice"></select>
+        <div class="col mb-3">
+          <div class="card" id="playerCardStats">
+            <div class="card-body">
+              <h4 class="card-title">Your Stats</h4>
+              <select id="playerChoice"></select>
+            </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <h4>Computer's cards</h4>
-          <div id="computerCards"></div>
+        <div class="col mb-3">
+          <div class="card" id="computerCardStats">
+            <div class="card-body">
+              <h4 class="card-title">Computer Stats</h4>
+              <select id="compChoice"></select>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-3">
+          <div class="card" id="computerCards">
+            <div class="card-body">
+              <h4 class="card-title">Computer's Cards</h4>
+              <p class="card-text">Computer's choice will appear here</p>
+            </div>
+          </div>
         </div>
       </div>
-      <hr />
-      <div class="row">
-        <div class="col-md-12">
-          <button id="play" class="btn btn-primary">Play</button>
+      <div class="col mb-3">
+        <div id="playerStatus">
+          <h4></h4>
         </div>
       </div>
-      <hr />
+      <!-- <hr /> -->
       <div class="row">
         <div class="col-md-12">
-          <h2>Result:</h2>
-          <div id="result"></div>
+          <button id="letsPlay" class="btn btn-primary btn-outline">Play</button>
+        </div>
+        <div class="col-md-6">
+          <div id="startOver"><button class="btn btn-outline">Restart Game</button></div>
+        </div>
+        <div class="col-md-6">
+          <div id="fetchData"><button class="btn btn-outline">Fetch</button></div>
+        </div>
+      </div>
+      <!-- <hr /> -->
+      <div class="row">
+        <div class="col-md-12 results">
+          
+          <!-- <p class="category">Results:<span></span></p>
+          <p class="results">Player Wins:<span class="score" id="pScore"></span></p>
+          <p class="results">Computer Wins: <span class="score" id="cScore"></span></p>
+          <p class="results">Draws:<span class="score" id="dScore"></span></p> -->
+          
         </div>
       </div>
     </div>
-
-
-
 
     <!-- Moment.js note: we may need this later, if not then we can drop it-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/fx.js"></script>
+    <script src="./assets/js/menu.js"></script>
 
 </body>
 
 </html>
-
 
