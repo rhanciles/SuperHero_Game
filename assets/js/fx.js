@@ -147,5 +147,38 @@ $(document).ready(function () {
 		}
 
 	);
+    
+    $('#introCard').animate({
+        marginTop: '-44rem'
+      }, 
+       2500);
+
+       $("#closeBtn").on("click", function(event) {
+
+            $('#introCard').animate({
+                marginTop: '-150rem'
+            }, 
+            2000);
+
+	});
+
+	$(favDiv).animate({
+		marginTop: '-600px',
+		opacity: '0'
+    }, 
+    {    
+        duration: 5,
+        complete: function () {
+            $(this).animate({
+				marginTop: '1rem',
+				opacity: '1'
+                
+            }, 2200,
+
+            );
+        },
+
+    });
+
 
 });
