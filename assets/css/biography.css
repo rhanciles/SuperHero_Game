@@ -163,8 +163,11 @@ background-color: rgba(4, 4, 4, 0.85);
 
 #f-heading {
     color: white;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-align: center;
+    background-color: rgba(130, 5, 248);
+    -webkit-text-stroke: black 2px;
+    font-size: 3rem;
 }
 
 /* .bg-dark {
@@ -196,3 +199,38 @@ background-color: rgba(4, 4, 4, 0.85);
     border-color: #fdcc52;
     background-color: #6652fd !important;
   }
+
+  #reset {
+    border-radius: 0 !important;
+    background-color: red !important;
+}
+#back {
+    border-radius: 0 !important;
+}
+.listbuttons {
+    background-color: red !important;
+    color: white;
+    -webkit-text-stroke: black 1px;
+    text-align-last: right;
+    display: block;
+}
+
+#biography-container {
+    padding: 10px;
+    width: 100% !important;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    color: white;
+    background-color: rgba(4, 4, 4, 0.85);
+    list-style-type: none;
+}
+
+.hrTop {
+    margin-top: 5rem;
+}
+
+.savedList {
+    width: 100%;
+    margin: 20px -20px;
+    letter-spacing: 2px;
+}
