@@ -1,6 +1,7 @@
 
 body {
   background-image: url(../images/Bkgnd-maxres.jpg);
+  background-size: cover;
 }
 
 .card {
@@ -61,7 +62,8 @@ h4 {
   background-color: rgb(55, 16, 92);
 }
 
-.btn-outline {
+.btn-outline,
+.btn-primary {
   color: white;
   border: 2px solid;
   border-color: white;
@@ -148,8 +150,12 @@ h4 {
   left: 0;
   right: 0;
   margin: 0 auto;
-  /* margin-top: -40rem; */
+  margin-top: -180rem;
   width: 60vw;
+}
+
+.gameBtns {
+  margin-top: 4rem;
 }
 
   
