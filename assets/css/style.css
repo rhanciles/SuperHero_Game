@@ -25,20 +25,10 @@ body {
   letter-spacing: 2px;
   font-family: 'Bangers', cursive !important;
 }
-/* .card {
-  height: 300px;
-  width: 200px;
-  background-color: #f1f1f1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #888888;
-  margin: 10px;
-} */
 
+h1 {
+  margin: 0 auto;
+}
 h2 {
   color: white;
 }
@@ -95,13 +85,6 @@ h4 {
   border-color: white;
 }
 
-/* .category {
-  color: white;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-top: 0.2rem;
-} */
-
 .showScores {
   color: white;
   font-size: 1.7rem;
@@ -125,8 +108,6 @@ h4 {
 }
 
 #playerStatus {
-  /* position: absolute; */
-  /* margin-bottom: 4rem; */
   padding-top: 0rem;
   margin-top: -1rem;
 }
@@ -168,11 +149,13 @@ h4 {
   background-image: linear-gradient(rgb(145, 31, 31), rgb(16, 58, 121));
   color: white;
   font-size: 20px;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   border: 2px solid;
   border-color: white;
   /* display: flex; */
   border-radius: 15px;
+  padding-top: 1.5rem;
+  margin-left: 5rem;
 }
 
 #pod5Btns {
@@ -184,10 +167,6 @@ h4 {
   /* flex-direction: row; */
   
 }
-
-/* #pod5Btns * {
-  flex: 0;
-} */
 
 .gameBtns {
   margin-top: 4rem;
