@@ -5,7 +5,7 @@ body {
 }
 
 .card {
-  height: 45vh;
+  /* height: 45vh; */
   border-radius: 0.5rem;
   background: none;
 }
