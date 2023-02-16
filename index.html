@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
   <div class="fxmenu">
     <div class="fxcontainer">
       <div class="toggle"></div>
-    </div><span class="hidden"><a href="index.html">Home </a></span><span class="hidden"><a href="biography.html">Bios</a></span><span class="hidden"><a href="#introCard">Guide</a></span><span class="hidden"><a href="#">Contact</a></span>
+    </div><span class="hidden"><a href="index.html">Home </a></span><span class="hidden"><a href="biography.html">Bios</a></span><span class="hidden"><a href="favourites.html">Favourites</a></span><span class="hidden"><a href="about.html">About</a></span>
   </div>
   
     <header class="container-fluid text-center text-white bg-dark p-2">
@@ -72,15 +72,15 @@
         </div>
       </div>
       <!-- <hr /> -->
-      <div class="row">
+      <div class="row gameBtns">
         <div class="col-md-12">
-          <button id="letsPlay" class="btn btn-primary btn-outline">Play</button>
+          <button id="letsPlay" class="btn btn-primary btn-lg btn-block" type="button">Play</button>
         </div>
         <div class="col-md-6">
-          <div id="startOver"><button class="btn btn-outline">Restart Game</button></div>
+          <div id="startOver"><button class="btn btn-primary btn-lg" type="reset">Restart Game</button></div>
         </div>
         <div class="col-md-6">
-          <div id="fetchData"><button class="btn btn-outline">Fetch</button></div>
+          <div id="fetchData"><button class="btn btn-primary btn-lg" type="button">Fetch</button></div>
         </div>
       </div>
       <!-- <hr /> -->
@@ -110,9 +110,10 @@
           6. Vice versa, Computer will win if it's stats is higher n equal number of cards in the start of the game. </Br>
           7. you loose a card if you loose a round and your opponent gains that card n equal number of cards in the start of the game. </Br>
           8. The game ends when one person runs out of cards,and the player with all the cards wins</p>
-          <h5>Click PLAY to begin</h5>
+          <h5>Click Play to begin</h5>
+          <a href="#" id="closeBtn" class="btn btn-primary btn-outline">Close</a>
         </article>
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        
         <img id="introImage" src="./assets/images/Spiderman-Outline.png" class="card-img-top" alt="...">
       </div>
     </div>
@@ -122,8 +123,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/jquery-3.5.1.min.js"></script> -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/fx.js"></script>
     <script src="./assets/js/menu.js"></script>

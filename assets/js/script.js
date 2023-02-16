@@ -144,7 +144,7 @@ $(document).ready(function () {
 						return true;
 					}
 				}
-				alert("You have no cards. Please press Fetch")
+				// alert("You have no cards. Please press Fetch")
 				return false;
 		// 	}
 		// }
