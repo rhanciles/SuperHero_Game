@@ -1,50 +1,150 @@
 
+body {
+  background-image: url(../images/Bkgnd-maxres.jpg);
+}
+
 .card {
-    height: 300px;
-    width: 200px;
-    background-color: #f1f1f1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px #888888;
-    margin: 10px;
-  }
+  height: 45vh;
+  border-radius: 0.5rem;
+  background: none;
+}
 
-  h4 {
-      text-align: center;
-  }
+.container {
+  margin-top: 2rem;
+}
 
+#playerCards,
+#computerCards {
+  background-color: rgba(240, 248, 255, 0.250);
+}
+
+.p-2 {
+  background-color: rgba(15, 14, 14, 0.274) !important;
+  height: 7rem;
+  letter-spacing: 2px;
+  font-family: 'Bangers', cursive !important;
+}
+/* .card {
+  height: 300px;
+  width: 200px;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #888888;
+  margin: 10px;
+} */
+
+h2 {
+  color: white;
+}
+
+h4 {
+  text-align: center;
+  padding-top: 0.3rem;
+  color: white;
+}
+
+.btn {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  height: 10%;
+  width: 100%;
+  /*padding: 1rem 1rem;*/
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1em;
+  text-transform: capitalize;
+  letter-spacing: 0.15rem;
+  border: 0;
+  background-color: rgb(55, 16, 92);
+}
+
+.btn-outline {
+  color: white;
+  border: 2px solid;
+  border-color: white;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+  color: white;
+  border-color: #fdcc52;
+  background-color: #6652fd;
+}
+
+.btn {
+  border-radius: 5px !important;
+  font-family: 'Arial', 'Helvetica', 'sans-serif', 'Lato';
+  font-weight: bold;
+  letter-spacing: 2px;
+  height: 3.2rem;
+  padding-top: 0.7rem;
+  margin-top: 0.3rem;
+  /* line-height: 1.1; */
+  opacity: unset;
+}
+
+#letsPlay {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  border: 2px solid;
+  border-color: white;
+}
+
+/* .category {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+} */
+
+.showScores {
+  color: white;
+  font-size: 1.7rem;
+  margin-right: 3rem;
+  /* margin-top: 0.2rem; */
+}
+
+.score {
+  margin-left: 0.2rem;
+  color: #6fe7eb;
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.7rem;
+  margin-right: 3rem;
+}
+
+#playerStatus {
+  /* position: absolute; */
+  /* margin-bottom: 4rem; */
+  padding-top: 0rem;
+  margin-top: -1rem;
+}
+
+@media screen and (max-width: 1140px) {
   .btn {
-    box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-    height: 10%;
-    width: 100%;
-    /*padding: 1rem 1rem;*/
-    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1em;
-  
-    text-transform: capitalize;
-    letter-spacing: 0.15rem;
-    border: 0;
-    background-color: rgb(161, 161, 161);
+    font-stretch: condensed;
+    padding-top: 0.5rem;
+    line-height: 1.1;
   }
+  .bg-dark {
+    height: 7rem;
+  }
+  h1 {
+    text-align: left;
+    margin-top: 3rem;
+    margin-left: 1.9rem;
+    line-height: 1;
+  }
+}
 
-  .btn-outline {
-    color: white;
-    border: 1px solid;
-    border-color: white;
-  }
   
-  .btn:hover, .btn:focus, .btn:active {
-    color: white;
-    border-color: #fdcc52;
-    background-color: #6652fd;
-  }
   
-  .btn {
-    border-radius: 5px !important;
-    font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
-    letter-spacing: 2px;
-  }
