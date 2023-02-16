@@ -154,12 +154,46 @@ h4 {
   width: 60vw;
 }
 
+#aboutUs {
+  /* position: absolute; */
+  /* left: 0;
+  right: 0; */
+  margin: 0 auto;
+  /* margin-top: -180rem; */
+  width: 60vw;
+}
+
+#pod5grp1 {
+  /* background-color: rgb(145, 31, 31); */
+  background-image: linear-gradient(rgb(145, 31, 31), rgb(16, 58, 121));
+  color: white;
+  font-size: 20px;
+  letter-spacing: 2px;
+  border: 2px solid;
+  border-color: white;
+  /* display: flex; */
+  border-radius: 15px;
+}
+
+#pod5Btns {
+  margin-top: 1rem;
+  display: flex;
+  width: auto;
+  gap: 1rem;
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+  
+}
+
+/* #pod5Btns * {
+  flex: 0;
+} */
+
 .gameBtns {
   margin-top: 4rem;
 }
 
-  
-  
+   
 
 
 @media screen and (max-width: 1140px) {
