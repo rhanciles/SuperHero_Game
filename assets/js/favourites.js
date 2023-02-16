@@ -6,15 +6,16 @@ var storedCharacter = JSON.parse(localStorage.getItem("stored")) || [];
 console.log(storedCharacter);
 
 //document.querySelector('#reset')
-var resetBtn = $("#reset");
+var resetBtn = $("#clearList");
 
+// Added event listener on resetBtn
 resetBtn.on("click", function (event) {
-  event.preventdefault()
+  
   // what additional logic do we want to run?
   localStorage.clear();
 
   // reload the DOM / Browser
-  // location.reload();
+  location.reload();
 });
 
 // added event listener on container
@@ -23,15 +24,22 @@ heroList.on("click", function (event) {
   // console.log(event.target.getAttribute('id'));
   // var removeItem = event.target.getAttribute('id');
   var removeItem = event.target;
+  var removeItemByAttribute = event.target.getAttribute("id")
+  console.log(removeItemByAttribute)
 
   if (removeItem.matches("button") === true) {
     // Get its data-index value and remove the todo element from the list
     var index = removeItem.parentElement.getAttribute("data-index");
     storedCharacter.splice(index, 1);
     console.log(storedCharacter);
+    localStorage.setItem("stored", JSON.stringify(storedCharacter));
+    
+  
+    location.reload();
   }
-  localStorage.setItem("stored", JSON.stringify(storedCharacter));
-  // location.reload();
+  
+
+  
 });
 
 var favDiv = $("#biography-container")
@@ -52,8 +60,6 @@ function renderLi() {
 
     favDiv.append(heroList)
     favDiv.append(favButtons)
-
-
 
     // Given each list item data index.
     listItem.attr("data-index", i);
