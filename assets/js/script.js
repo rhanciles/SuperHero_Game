@@ -402,9 +402,9 @@ $(document).ready(function () {
 
 	// listener for starting over
 	$("#startOver").on("click", function(event) {
-		// $("#gameStats").empty();
-		// init();
-			location.reload(true);
+		 $("#gameStats").empty();
+		 init();
+		//	location.reload(true);
 	});
 
 	function getRandomNum(number) {
