@@ -147,5 +147,20 @@ $(document).ready(function () {
 		}
 
 	);
+    
+    $('#introCard').animate({
+        marginTop: '-44rem'
+      }, 
+       2000);
+
+       $("#letsPlay").on("click", function(event) {
+
+            $('#introCard').animate({
+                marginTop: '-180rem'
+            }, 
+            2000);
+
+	});
+    
 
 });
