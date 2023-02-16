@@ -8,6 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
@@ -22,7 +23,7 @@
   <div class="fxmenu">
     <div class="fxcontainer">
       <div class="toggle"></div>
-    </div><span class="hidden"><a href="index.html">Home </a></span><span class="hidden"><a href="biography.html">Bios</a></span><span class="hidden"><a href="#">Guide</a></span><span class="hidden"><a href="#">Contact</a></span>
+    </div><span class="hidden"><a href="index.html">Home </a></span><span class="hidden"><a href="biography.html">Bios</a></span><span class="hidden"><a href="#introCard">Guide</a></span><span class="hidden"><a href="#">Contact</a></span>
   </div>
   
     <header class="container-fluid text-center text-white bg-dark p-2">
@@ -95,10 +96,34 @@
       </div>
     </div>
 
+  <section id="introCard">
+    <div class="card">
+      <div class="card-body col-sm-12 col-md-10 col-lg-10" id="how-to-play">
+        <article class="card-text">
+          <h3 class="card-title">Hey buddy!</h3>
+          <h5><i>Here's how to play the coolest game in town.</i></h5>
+          <p> 1. Player(user) and computer have an equal number of cards in the start of the game. </Br>
+          2. User will start the game by default. n equal number of cards in the start of the game. </Br>
+          3. There are 6 stats with a corresponding value: Combat, Durability, Intelligence, Power, Speed and Strength n equal number of cards in the start of the game. </Br>
+          4. User can view their card but cannot see the computers until they have chosen the stats to battle. n equal number of cards in the start of the game. </Br>
+          5. User should choose 1 out of 6 stats on the card, if the value of the stat is higher than the value of stat from the computer's card, the user will win the round n equal number of cards in the start of the game. </Br>
+          6. Vice versa, Computer will win if it's stats is higher n equal number of cards in the start of the game. </Br>
+          7. you loose a card if you loose a round and your opponent gains that card n equal number of cards in the start of the game. </Br>
+          8. The game ends when one person runs out of cards,and the player with all the cards wins</p>
+          <h5>Click PLAY to begin</h5>
+        </article>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <img id="introImage" src="./assets/images/Spiderman-Outline.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </section>
+
     <!-- Moment.js note: we may need this later, if not then we can drop it-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/fx.js"></script>
     <script src="./assets/js/menu.js"></script>

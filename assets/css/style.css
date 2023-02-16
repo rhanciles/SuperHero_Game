@@ -129,6 +129,33 @@ h4 {
   margin-top: -1rem;
 }
 
+#how-to-play {
+  /* background-color: rgb(145, 31, 31); */
+  background-image: linear-gradient(rgb(145, 31, 31), rgb(16, 58, 121));
+  color: white;
+  border: 2px solid;
+  border-color: white;
+  display: flex;
+  border-radius: 15px;
+}
+
+#introImage { 
+  width: 200px;
+}
+
+#introCard {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  /* margin-top: -40rem; */
+  width: 60vw;
+}
+
+  
+  
+
+
 @media screen and (max-width: 1140px) {
   .btn {
     font-stretch: condensed;
@@ -146,5 +173,3 @@ h4 {
   }
 }
 
-  
-  
