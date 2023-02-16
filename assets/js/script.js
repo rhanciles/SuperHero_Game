@@ -77,6 +77,8 @@ $(document).ready(function () {
 		gameDraws = 0;
 		gameOver = false;
 		startOver = false;
+		$("#letsPlay").text("Play");
+		$("#letsPlay").prop("disabled", false);
 		loadPage()
 		
 		//console.log("comp deck: "+computerDeck, "player deck: "+playerDeck);
@@ -202,9 +204,9 @@ $(document).ready(function () {
 		}, 60000);
 		*/
 		//----------------------------------------------------------------
-		console.log("game on from comp");
+		//console.log("game on from comp");
 		gameOn(computerPrefStat, event);
-		console.log("returning from comp game on");
+		//console.log("returning from comp game on");
 
 	});
 
@@ -251,9 +253,9 @@ $(document).ready(function () {
 		console.log("player pref stat: " + playerPrefStat);
 		displayCard(computerDeck, "#computerCards");
 		displayCardStats(computerDeck, "#computerCardStats");
-		console.log("about to game on player side");
+		//console.log("about to game on player side");
 		gameOn(playerPrefStat, event);
-		console.log("returning from player game on");
+		//console.log("returning from player game on");
 	});
 
 	function gameOn(prefs, event) {
@@ -262,9 +264,9 @@ $(document).ready(function () {
 		var compPrefs = computerDeck[computerTopCard].powerstats[pref[prefs]];
 		// $(compPrefs).css({ 'background-color': '#fdcc52'});
 		winner = "";
-		console.log("comp prefs: "+ compPrefs, "player prefs: "+ playerPrefs);
+		//console.log("comp prefs: "+ compPrefs, "player prefs: "+ playerPrefs);
 		if (playerPrefs > compPrefs) {
-			console.log("player wins");
+			//console.log("player wins");
 			playerWins++;
 
 			if (computerDeckCount > 0) {
@@ -275,7 +277,7 @@ $(document).ready(function () {
 				computerDeck.push(computerDeck.shift()); // shift the comp array in a round robin stylee
 				winner = "player";
 
-				console.log(playerDeckCount)
+				//console.log(playerDeckCount)
 
 				// show a graphic of card moving from comp to player here and make a whoosing noise?
 			}
@@ -293,7 +295,7 @@ $(document).ready(function () {
 			}
 		}
 		else if (playerPrefs < compPrefs) {
-			console.log("computer wins");
+			//console.log("computer wins");
 			computerWins++;
 
 			if (playerDeckCount > 0) {
@@ -304,7 +306,7 @@ $(document).ready(function () {
 				computerDeck.push(computerDeck.shift()); // shift the comp array in a round robin stylee
 				winner = "computer";
 
-				console.log(computerDeckCount)
+				//console.log(computerDeckCount)
 
 				// show a graphic of card moving from player to comp here and make a whoosing noise?				
 			}
@@ -338,13 +340,20 @@ $(document).ready(function () {
 		var cScore = $("<p class='showScores'>" + "Computer Wins: " + "<span class='score'>" + computerWins + "</span>");
 		var dScore = $("<p class='showScores'>" + "Draws: " + "<span class='score'>" + gameDraws + "</span>");
 	
-		var finished = $("<h2>").text("Game Over!");
+		//var finished = $("<h2>").text("Game Over!");
 		if (computerDeckCount === 0 || playerDeckCount === 0) {
 			displayCard(startCard, "#playerCards");
 			displayCard(startCard, "#computerCards");
-			$(".game-stats").html(finished);
+			//$(".game-stats").html(finished);
 			$(".computerPlay").prop("disabled", true);
 			$(".playerPlay").prop("disabled", true);
+			if (computerDeckCount === 0) {
+				$("#letsPlay").text("Game Over! YOU Win");
+			}
+			else {
+				$("#letsPlay").text("Game Over! COMPUTER Wins");
+			}
+			$("#letsPlay").prop("disabled", true);
 			$("#computerStatus").empty();
 			$("#playerStatus").empty();
 			setTimeout(() => {
@@ -385,7 +394,7 @@ $(document).ready(function () {
 
 			}, 2000);
 			*/
-			console.log("player deck: "+playerDeck.length, "comp deck: "+computerDeck.length);
+			//console.log("player deck: "+playerDeck.length, "comp deck: "+computerDeck.length);
 			/*	if (winner === "computer") {	  
 				//alert("comp wins - about to trigger click");
 				setTimeout(() => {
@@ -402,9 +411,9 @@ $(document).ready(function () {
 
 	// listener for starting over
 	$("#startOver").on("click", function(event) {
-		// $("#gameStats").empty();
-		// init();
-			location.reload(true);
+		 $("#gameStats").empty();
+		 init();
+		//	location.reload(true);
 	});
 
 	function getRandomNum(number) {
