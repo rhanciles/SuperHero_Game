@@ -16,8 +16,16 @@ The game requires 2 players and the computer just happens to be one of the pair.
     7.	You lose a card if you lose a round and your opponent gains that card.
     8.	The game ends when one person runs out of cards, and the player with all the cards wins.
     
-The following image illustrates what the interface looks like:
-(./assets/images/Superhero-Game.jpg)
+## Screenshots
+![The following image illustrates what the interface looks like:](./assets/images/Superhero-Game.png)
+
+![image showing the SuperHero index page:](./assets/images/superhero_index.png)   
+
+## Website
+https://rhanciles.github.io/SuperHero_Game
+
+## Github
+https://github.com/rhanciles/SuperHero_Game
 
 ## Meet the team: 
     •	Candice Wong – Bootstrap, Modals, CSS & HTML
