@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+	var favDiv = $("#biography-container")
+
     $('#computerCards').animate({
         height: '2%',
         width: '2%',
@@ -183,7 +185,7 @@ $(document).ready(function () {
     });
 
 	$(favDiv).animate({
-		marginTop: '-600px',
+		marginTop: '-180rem',
 		opacity: '0'
     }, 
     {    
