@@ -58,6 +58,5 @@ function renderLi() {
     listItem.attr("data-index", i);
   }
 
-
 }
 renderLi();

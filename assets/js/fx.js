@@ -182,7 +182,7 @@ $(document).ready(function () {
 
     });
 
-	$('#favDiv').animate({
+	$(favDiv).animate({
 		marginTop: '-600px',
 		opacity: '0'
     }, 
