@@ -106,6 +106,22 @@ $(document).ready(function () {
 
 	});
 
+	function fetchAlert () {
+		$('#alertCard').animate({
+			marginTop: '-44rem'
+		  }, 
+		   2500);
+	
+		   $("#closeAlert").on("click", function(event) {
+	
+				$('#alertCard').animate({
+					marginTop: '-180rem'
+				}, 
+				2000);
+	
+		});
+	}
+
 	function getsuperHeroes() {
 		const settings = {
 			"async": true,
@@ -146,7 +162,8 @@ $(document).ready(function () {
 						return true;
 					}
 				}
-				// alert("You have no cards. Please press Fetch")
+				// alert - You have no cards. Please press Fetch")
+				fetchAlert()
 				return false;
 		// 	}
 		// }
