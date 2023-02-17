@@ -2,6 +2,9 @@
 body {
   background-image: url(../images/Bkgnd-maxres.jpg);
   background-size: cover;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
 
 .card {
@@ -29,6 +32,7 @@ body {
 h1 {
   margin: 0 auto;
 }
+
 h2 {
   color: white;
 }
@@ -136,11 +140,7 @@ h4 {
 }
 
 #aboutUs {
-  /* position: absolute; */
-  /* left: 0;
-  right: 0; */
   margin: 0 auto;
-  /* margin-top: -180rem; */
   width: 60vw;
 }
 
@@ -155,7 +155,7 @@ h4 {
   /* display: flex; */
   border-radius: 15px;
   padding-top: 1.5rem;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
 }
 
 #pod5Btns {
@@ -163,16 +163,19 @@ h4 {
   display: flex;
   width: auto;
   gap: 1rem;
-  /* flex-wrap: wrap; */
-  /* flex-direction: row; */
-  
+  flex-wrap: wrap;
 }
 
 .gameBtns {
   margin-top: 4rem;
 }
 
-   
+#closeBtn {
+  width: 28%;
+  margin-top: 10px;
+}
+
+
 
 
 @media screen and (max-width: 1140px) {
@@ -189,6 +192,23 @@ h4 {
     margin-top: 3rem;
     margin-left: 1.9rem;
     line-height: 1;
+  }
+  #introCard {
+    margin-top: -250rem;
+    width: 100vw;
+    margin: 0px;
+  }
+  #introImage { 
+    max-width: 120px;
+  }
+  #how-to-play {
+    font-size: 15px;
+  }
+  #closeBtn {
+    width: 50%;
+  }
+  #aboutUs {
+    width: 80vw;
   }
 }
 
