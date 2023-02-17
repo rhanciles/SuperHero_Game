@@ -17,7 +17,7 @@ The game requires 2 players and the computer just happens to be one of the pair.
     8.	The game ends when one person runs out of cards, and the player with all the cards wins.
     
 ## Screenshots
-![The following image illustrates what the interface looks like:](./assets/images/Superhero-Game.png)
+![The following image illustrates what the interface looks like:](./assets/images/Superhero_Game.png)
 
 ![image showing the SuperHero index page:](./assets/images/superhero_index.png)   
 
